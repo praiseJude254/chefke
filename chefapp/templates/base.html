@@ -1,0 +1,92 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}chefke{% endblock  %} </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+      <!--Navigation Bar Start-->
+  <nav>
+    <div class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="chefke Logo">
+        <span>chefke</span>
+    </div>
+    
+
+    <div class="nav-center">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Hire a chef</a></li>
+        <li><a href="#">Find Events</a></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <a href="" class="login-btn">Login</a>
+
+  </nav>
+  <!--Navigation Bar End-->
+  {% block content %}
+  {% endblock  %}
+  <!--Footer Section Start-->
+  <footer class="footer">
+    <div class="footer-container">
+        <!-- Column 1 -->
+        <div class="footer-column">
+            <img src="{% static 'images/logo.png' %}" alt="TFB Logo" class="footer-logo">
+            <p>Connecting kenyan's best chefs with clients for events,parties,and private dinning.</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Hire a chef</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">How it works</a></li>              
+            </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-column">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-column">
+            <h3>Newsletter</h3>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+
+            <!-- Social Media Icons -->
+            <div class="footer-social">
+                <a href="#"><img src="{% static 'images/logo/fb.png' %}" alt="Facebook"></a>
+                <a href="#"><img src="{% static 'images/logo/twitter.png' %}" alt="Twitter"></a>
+                <a href="#"><img src="{% static 'images/logo/insta.png' %}" alt="Instagram"></a>
+                <a href="#"><img src="{% static 'images/logo/ln.png' %}" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Designed and developed by <b class="copy">praise jude</b>. All rights reserved.</p>
+    </div>
+  </footer>  
+    
+</body>
+</html>

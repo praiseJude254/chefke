@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title  %}chefke{% endblock  %}
+{% block content %}
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="carousel">
+        <div class="slides">
+            <div class="slide"><img src="{% static 'images/img1.jpg' %}" alt="Slide 1"></div>
+            <div class="slide"><img src="{% static 'images/img2.jpg' %}" alt="Slide 2"></div>
+            <div class="slide"><img src="{% static 'images/img3.jpg' %}" alt="Slide 3"></div>
+            <div class="slide"><img src="{% static 'images/img4.jpg' %}" alt="Slide 4"></div>
+            <div class="slide"><img src="{% static 'images/img5.jpg' %}" alt="Slide 5"></div>
+        </div>
+    </div>
+
+    <div class="hero-content">
+        <h1>Chefke, Kenya's premier chef hiring platform </h1>
+        <h2>Hire strusted chefs for weddings,coprate, Events and private cookouts</h2>
+        <p>
+             At ChefKe, we make it easy to hire skilled chefs for every occasion. Whether it’s a wedding, birthday, corporate event, or private dinner, our chefs bring the perfect blend of taste and professionalism to your table 
+        </p>
+        <div class="cta-buttons">
+            <a href="#" class="btn primary">Hire a chef</a>
+            <a href="#" class="btn secondary">Join as a chef</a>
+        </div>
+    </div>
+  </section>
+
+
+
+{% endblock  %}
