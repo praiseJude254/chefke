@@ -3,31 +3,126 @@
 {% block title  %}chefke{% endblock  %}
 {% block content %}
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="carousel">
-        <div class="slides">
-            <div class="slide"><img src="{% static 'images/img1.jpg' %}" alt="Slide 1"></div>
-            <div class="slide"><img src="{% static 'images/img2.jpg' %}" alt="Slide 2"></div>
-            <div class="slide"><img src="{% static 'images/img3.jpg' %}" alt="Slide 3"></div>
-            <div class="slide"><img src="{% static 'images/img4.jpg' %}" alt="Slide 4"></div>
-            <div class="slide"><img src="{% static 'images/img5.jpg' %}" alt="Slide 5"></div>
-        </div>
-    </div>
+{% load static %}
 
-    <div class="hero-content">
-        <h1>Chefke, Kenya's premier chef hiring platform </h1>
-        <h2>Hire strusted chefs for weddings,coprate, Events and private cookouts</h2>
-        <p>
-             At ChefKe, we make it easy to hire skilled chefs for every occasion. Whether it’s a wedding, birthday, corporate event, or private dinner, our chefs bring the perfect blend of taste and professionalism to your table 
-        </p>
-        <div class="cta-buttons">
-            <a href="#" class="btn primary">Hire a chef</a>
-            <a href="#" class="btn secondary">Join as a chef</a>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero" style="background: url('{% static 'img/hero1.jpg' %}') no-repeat center center/cover;">
+  <div class="hero-content">
+    <h1>Welcome to ChefKe</h1>
+    <h2>Hire Professional Chefs in Kenya</h2>
+    <p>From private cookouts to large events, ChefKe connects you with the best chefs across the country.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn primary-btn">Get Started</a>
+      <a href="#" class="btn secondary-btn">Learn More</a>
     </div>
+    <div class="scroll-down">
+      <span>&#8595;</span>
+    </div>
+  </div>
   </section>
 
+
+  <section class="about">
+  <div class="about-container">
+    <!-- Left: Text -->
+    <div class="about-text">
+      <h2>About Us</h2>
+      <h3>Who We Are</h3>
+      <p>
+        At <strong>ChefKe</strong>, we connect you with the finest chefs in Kenya for private
+        cookouts, events, and unforgettable dining experiences. Our mission is to bring luxury,
+        taste, and professionalism to your table.
+      </p>
+      <a href="#contact" class="about-cta">Learn More</a>
+    </div>
+
+    <!-- Right: Image -->
+    <div class="about-image">
+      <img src="{% static 'img/abt1.png' %}" alt="ChefKe - About Us">
+    </div>
+  </div>
+  </section>
+
+  <!-- Who We Are Section -->
+  <section class="who-we-are">
+  <div class="container">
+    <h2 class="section-title">Who We Are</h2>
+    <h3 class="section-subtitle">Our Services</h3>
+    <p class="section-intro">
+      At Chefke, we take pride in delivering unforgettable culinary experiences, whether for private dining, special occasions, or large events. 
+      Our chefs are passionate about combining creativity with expertise, ensuring every dish not only tastes extraordinary but also feels like a moment of luxury. 
+      Explore the services we provide to bring world-class dining directly to your table.
+    </p>
+
+    <div class="cards">
+      <a href="#" class="service-card">
+        <img src="{% static 'img/hero1.jpg' %}" alt="Private Dining">
+        <h4>Private Dining</h4>
+        <p>Exclusive experiences tailored to you.</p>
+      </a>
+      <a href="#" class="service-card">
+        <img src="{% static 'img/hero2.jpg' %}" alt="Event Catering">
+        <h4>Event Catering</h4>
+        <p>Luxury menus for weddings & events.</p>
+      </a>
+      <a href="#" class="service-card">
+        <img src="{% static 'img/hero3.jpg' %}" alt="Corporate Services">
+        <h4>Corporate Services</h4>
+        <p>Professional dining for business needs.</p>
+      </a>
+      <a href="#" class="service-card">
+        <img src="{% static 'img/hero4.jpg' %}" alt="Cooking Classes">
+        <h4>Cooking Classes</h4>
+        <p>Learn from world-class chefs.</p>
+      </a>
+    </div>
+
+    <div class="cta-wrapper">
+      <a href="#" class="cta-btn">Explore More</a>
+    </div>
+  </div>
+  </section>
+
+  <!-- Top Chefs Section -->
+  <section class="top-chefs">
+  <div class="section-header">
+    <h2>Our Top Chefs</h2>
+    <p class="subtitle">Meet the culinary artists behind our finest dishes</p>
+    <p class="intro">
+      Our chefs are the heartbeat of our kitchen, combining passion, creativity, and years of expertise to craft dishes that delight your senses. Each one brings their unique flair, ensuring an unforgettable dining experience.
+    </p>
+  </div>
+
+  <div class="chef-cards">
+    <div class="chef-card">
+      <img src="{% static 'img/abt1.png' %}" alt="Chef 1">
+      <h3>Chef Jerry</h3>
+      <p class="desc">Master of French cuisine</p>
+    </div>
+
+    <div class="chef-card">
+        <img src="{% static 'img/abt1.png' %}" alt="Chef 2">
+      <h3>Chef Chandi</h3>
+      <p class="desc">Specialist in Italian flavors</p>
+    </div>
+
+    <div class="chef-card">
+      <img src="{% static 'img/abt1.png' %}" alt="Chef 3">
+      <h3>Chef Opati</h3>
+      <p class="desc">Authentic Japanese culinary artist</p>
+    </div>
+
+    <div class="chef-card">
+      <img src="{% static 'img/abt1.png' %}" alt="Chef 4">
+      <h3>Chef Grace</h3>
+      <p class="desc">Expert in modern fusion cuisine</p>
+    </div>
+  </div>
+
+  <div class="cta-container">
+    <a href="#" class="luxury-btn">Meet All Chefs</a>
+  </div>
+  </section>
 
 
 {% endblock  %}

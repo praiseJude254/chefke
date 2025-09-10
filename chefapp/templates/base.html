@@ -7,86 +7,97 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-      <!--Navigation Bar Start-->
-  <nav>
-    <div class="logo">
-        <img src="{% static 'images/logo.png' %}" alt="chefke Logo">
-        <span>chefke</span>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="{% static 'img/logo/logo.png'%}" alt="Chefke Logo" class="logo">
+      <span class="brand-name">Chefke</span>
     </div>
-    
 
-    <div class="nav-center">
-      <ul class="nav-links">
+    <nav class="nav-center">
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'chefs' %}">Our Chefs</a></li>
+        <li><a href="{% url 'media' %}">Events</a></li>
+        <li><a href="{% url 'media' %}">Gallery</a></li>
+        <li><a href="{% url 'contactus' %}">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#" class="btn btn-outline">Login</a>
+      <a href="#" class="btn btn-primary">Book a Chef</a>
+    </div>
+  </header>  <!-- Navigation Bar -->
+
+  {% block content %}
+  {% endblock  %}
+
+    <!-- Footer Section -->
+  <footer class="footer">
+  <div class="footer-container">
+
+    <!-- About -->
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <p>
+        Chefke brings luxury catering and personal chefs to your events across Kenya. 
+        We connect you with verified professionals to make your experience unforgettable.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">About Us</a></li>
-        <li><a href="#">Hire a chef</a></li>
-        <li><a href="#">Find Events</a></li>
-        <li><a href="#">How it works</a></li>
+        <li><a href="#">Our Chefs</a></li>
+        <li><a href="#">Events</a></li>
         <li><a href="#">Gallery</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
 
-    <a href="" class="login-btn">Login</a>
-
-  </nav>
-  <!--Navigation Bar End-->
-  {% block content %}
-  {% endblock  %}
-  <!--Footer Section Start-->
-  <footer class="footer">
-    <div class="footer-container">
-        <!-- Column 1 -->
-        <div class="footer-column">
-            <img src="{% static 'images/logo.png' %}" alt="TFB Logo" class="footer-logo">
-            <p>Connecting kenyan's best chefs with clients for events,parties,and private dinning.</p>
-        </div>
-
-        <!-- Column 2 -->
-        <div class="footer-column">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Hire a chef</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">How it works</a></li>              
-            </ul>
-        </div>
-
-        <!-- Column 3 -->
-        <div class="footer-column">
-            <h3>Resources</h3>
-            <ul>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </div>
-
-        <!-- Column 4 -->
-        <div class="footer-column">
-            <h3>Newsletter</h3>
-            <form>
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-
-            <!-- Social Media Icons -->
-            <div class="footer-social">
-                <a href="#"><img src="{% static 'images/logo/fb.png' %}" alt="Facebook"></a>
-                <a href="#"><img src="{% static 'images/logo/twitter.png' %}" alt="Twitter"></a>
-                <a href="#"><img src="{% static 'images/logo/insta.png' %}" alt="Instagram"></a>
-                <a href="#"><img src="{% static 'images/logo/ln.png' %}" alt="LinkedIn"></a>
-            </div>
-        </div>
+    <!-- Logo & Brand -->
+    <div class="footer-col footer-logo-col">
+      <img src="{% static 'img/logo/logo.png' %}" alt="Chefke Logo">
+      <span class="footer-brand">Chefke</span>
     </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2025 Designed and developed by <b class="copy">praise jude</b>. All rights reserved.</p>
+    <!-- Contact -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Email: support@chefke.com</p>
+      <p>Phone: +254 741440621</p>
+      <p>Nairobi, Kenya</p>
     </div>
-  </footer>  
+
+    <!-- Newsletter + Social -->
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p>Subscribe for updates on luxury chefs and events.</p>
+      <form>
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
+
+      <!-- Social Icons -->
+      <div class="social-links">
+        <a href="#"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="assets/icons/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Chefke | Designed & Developed by <strong>Jude Praise</strong></p>
+  </div>
+  </footer>
     
 </body>
 </html>
