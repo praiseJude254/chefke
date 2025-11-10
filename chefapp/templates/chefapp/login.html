@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}ChefKe | Login{% endblock %}
+{% block content %}
+
+<section class="login-section">
+  <div class="login-container">
+    <!-- Logo -->
+    <div class="login-logo-wrap">
+      <img src="{% static 'img/logo.png' %}" alt="ChefKe Logo" class="login-logo">
+      <h2 class="brand-name">ChefKe</h2>
+    </div>
+
+    <!-- Title & Subtitle -->
+    <p class="login-subtitle">
+      Please log in to continue booking premium chefs and catering services.
+    </p>
+
+    <!-- Form -->
+    <form action="#" method="post" class="login-form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+
+      <!-- Forgot Password -->
+      <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <!-- Buttons -->
+      <button type="submit" class="btn btn-primary login-btn">Login</button>
+    </form>
+
+    <!-- Extra Link -->
+    <p class="signup-link">
+      Don’t have an account? <a href="{% url 'signup' %}">Sign Up</a>
+    </p>
+  </div>
+</section>
+
+{% endblock %}

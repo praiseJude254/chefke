@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}ChefKe | Booking{% endblock %}
+{% block content %}
+<section class="booking-section">
+  <div class="booking-container">
+    <!-- Logo -->
+    <img src="img/logo/logo.png" alt="Cheke Logo" class="booking-logo">
+
+    <!-- Title & Subtitle -->
+    <h1 class="booking-title">Book a Premium Chef or Catering Service</h1>
+    <p class="booking-subtitle">
+      We offer luxury chef and catering services for events across Kenya — from private dining to corporate events and special gigs.  
+      Please fill in the form below to make your booking.
+    </p>
+
+    <!-- Booking Form -->
+    <form class="booking-form">
+      <div class="form-group">
+        <label for="fullname">Full Name *</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+254..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="event-type">Type of Event *</label>
+        <select id="event-type" name="event-type" required>
+          <option value="" disabled selected>Select event type</option>
+          <option value="personal">Personal Event</option>
+          <option value="corporate">Corporate Event</option>
+          <option value="wedding">Wedding</option>
+          <option value="gig">Gig / Special Booking</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="guests">Number of Guests *</label>
+        <input type="number" id="guests" name="guests" min="1" placeholder="e.g. 100" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Event Date *</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Event Location *</label>
+        <input type="text" id="location" name="location" placeholder="City / Venue" required>
+      </div>
+
+      <div class="form-group">
+        <label for="service">Service Required *</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="chef">Hire a Chef</option>
+          <option value="catering">Catering Services</option>
+          <option value="full-package">Full Package (Chef + Catering)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="details">Additional Details</label>
+        <textarea id="details" name="details" rows="5" placeholder="Tell us more about your event..."></textarea>
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Submit Booking</button>
+        <button type="reset" class="btn-secondary">Clear</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}
