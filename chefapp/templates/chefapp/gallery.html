@@ -1,0 +1,294 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title  %}Chefke | Gallery{% endblock  %}
+{% block content %}
+
+    <!-- GALLERY HERO / BANNER SECTION -->
+    <section class="gallery-hero" style="background: url('{% static 'img/hero2.jpg' %}') no-repeat center center/cover;">
+        <div class="gallery-hero-overlay"></div>
+        <div class="gallery-hero-content">
+            <h1 class="gallery-hero-title">Experience Culinary Excellence Through Our Lens</h1>
+            <h2 class="gallery-hero-subtitle">A curated collection of ChefKe’s events, dishes, and premium culinary moments across Kenya.</h2>
+            <div class="gallery-hero-buttons">
+                <a href="#chef-gallery" class="luxury-btn">View Chefs in Action</a>
+                <a href="#booking-section" class="luxury-btn dark-btn">Book a Chef Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY CATEGORIES / FILTERS SECTION -->
+    <section class="gallery-categories">
+        <div class="container">
+            <h2 class="section-title">Explore by Category</h2>
+
+            <div class="categories-tabs">
+                <button class="category-tab active" data-filter="all">All</button>
+                <button class="category-tab" data-filter="corporate">Corporate Events</button>
+                <button class="category-tab" data-filter="weddings">Weddings & Celebrations</button>
+                <button class="category-tab" data-filter="private">Private Dining / Home Experiences</button>
+                <button class="category-tab" data-filter="tourism">Tourism & Luxury Experiences</button>
+                <button class="category-tab" data-filter="bts">Behind-the-Scenes / Chefs at Work</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN GALLERY GRID SECTION -->
+    <section class="gallery-grid-section">
+        <div class="container">
+            <h2 class="section-title">Culinary Moments Captured</h2>
+            <p class="section-subtitle">A curated collection of ChefKe’s events, dishes, and behind-the-scenes luxury experiences.</p>
+
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Corporate Event">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Corporate Gala</h4>
+                        <span class="overlay-subtitle">High-end corporate dinner</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Wedding Celebration">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Luxury Wedding</h4>
+                        <span class="overlay-subtitle">Exclusive wedding dining</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Private Dining">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Private Dining</h4>
+                        <span class="overlay-subtitle">Intimate chef experience</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Tourism Luxury">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Luxury Tourism Event</h4>
+                        <span class="overlay-subtitle">Culinary journey experience</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Corporate Event">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Corporate Gala</h4>
+                        <span class="overlay-subtitle">High-end corporate dinner</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Wedding Celebration">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Luxury Wedding</h4>
+                        <span class="overlay-subtitle">Exclusive wedding dining</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Private Dining">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Private Dining</h4>
+                        <span class="overlay-subtitle">Intimate chef experience</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Tourism Luxury">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Luxury Tourism Event</h4>
+                        <span class="overlay-subtitle">Culinary journey experience</span>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Corporate Event">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Corporate Gala</h4>
+                        <span class="overlay-subtitle">High-end corporate dinner</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Wedding Celebration">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Luxury Wedding</h4>
+                        <span class="overlay-subtitle">Exclusive wedding dining</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Private Dining">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Private Dining</h4>
+                        <span class="overlay-subtitle">Intimate chef experience</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Tourism Luxury">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Luxury Tourism Event</h4>
+                        <span class="overlay-subtitle">Culinary journey experience</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Corporate Event">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Corporate Gala</h4>
+                        <span class="overlay-subtitle">High-end corporate dinner</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Wedding Celebration">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Luxury Wedding</h4>
+                        <span class="overlay-subtitle">Exclusive wedding dining</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Private Dining">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Private Dining</h4>
+                        <span class="overlay-subtitle">Intimate chef experience</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="{% static 'img/img1.jpg' %}" alt="Tourism Luxury">
+                    <div class="overlay">
+                        <h4 class="overlay-title">Luxury Tourism Event</h4>
+                        <span class="overlay-subtitle">Culinary journey experience</span>
+                    </div>
+                </div>
+
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED GALLERY SECTION -->
+    <section class="featured-gallery-section">
+    <div class="container">
+        <h2 class="section-title">Signature Moments</h2>
+        <p class="section-subtitle">A curated showcase of our top events, dishes, and celebrity client experiences.</p>
+
+        <div class="featured-gallery-grid">
+        <!-- Large Featured Item -->
+        <div class="featured-item featured-large">
+            <img src="{% static 'img/img3.jpg' %}" alt="Michelin-inspired Dinner">
+            <div class="featured-overlay">
+            <h4 class="overlay-title">Michelin-inspired Dinner</h4>
+            <a href="{% url 'aboutus' %}" class="luxury-btn">Book This Chef</a>
+            </div>
+        </div>
+
+        <!-- Medium Featured Items -->
+        <div class="featured-item featured-medium">
+            <img src="{% static 'img/img3.jpg' %}" alt="Celebrity Gala">
+            <div class="featured-overlay">
+            <h4 class="overlay-title">Celebrity Gala</h4>
+            <a href="{% url 'aboutus' %}" class="luxury-btn">Book This Chef</a>
+            </div>
+        </div>
+
+        <div class="featured-item featured-medium">
+            <img src="{% static 'img/img3.jpg' %}" alt="Private Luxury Dining">
+            <div class="featured-overlay">
+            <h4 class="overlay-title">Private Luxury Dining</h4>
+            <a href="{% url 'aboutus' %}" class="luxury-btn">Book This Chef</a>
+            </div>
+        </div>
+
+        <!-- Small Featured Items -->
+        <div class="featured-item featured-small">
+            <img src="{% static 'img/img3.jpg' %}" alt="Exclusive Event">
+            <div class="featured-overlay">
+            <h4 class="overlay-title">Exclusive Event Catering</h4>
+            <a href="{% url 'aboutus' %}" class="luxury-btn">Book This Chef</a>
+            </div>
+        </div>
+
+        <div class="featured-item featured-small">
+            <img src="{% static 'img/img3.jpg' %}" alt="Luxury Wedding">
+            <div class="featured-overlay">
+            <h4 class="overlay-title">Luxury Wedding</h4>
+            <a href="{% url 'aboutus' %}" class="luxury-btn">Book This Chef</a>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- VIDEO HIGHLIGHTS SECTION -->
+    <section class="video-strip-section">
+        <h2 class="section-title">Behind the Scenes</h2>
+        <div class="video-grid">
+            <div class="video-item">
+                <video src="{% static 'videos/v1.mp4' %}" muted></video>
+                <div class="video-overlay">
+                    <div class="play-btn">&#9658;</div>
+                </div>
+            </div>
+            <div class="video-item">
+                <video src="{% static 'videos/v1.mp4' %}" muted></video>
+                <div class="video-overlay">
+                    <div class="play-btn">&#9658;</div>
+                </div>
+            </div>
+            <div class="video-item">
+                <video src="{% static 'videos/v1.mp4' %}" muted></video>
+                <div class="video-overlay">
+                    <div class="play-btn">&#9658;</div>
+                </div>
+            </div>
+            <div class="video-item">
+                <video src="{% static 'videos/v1.mp4' %}" muted></video>
+                <div class="video-overlay">
+                    <div class="play-btn">&#9658;</div>
+                </div>
+            </div>
+            <div class="video-item">
+                <video src="{% static 'videos/v1.mp4' %}" muted></video>
+                <div class="video-overlay">
+                    <div class="play-btn">&#9658;</div>
+                </div>
+            </div>
+            <div class="video-item">
+                <video src="{% static 'videos/v1.mp4' %}" muted></video>
+                <div class="video-overlay">
+                    <div class="play-btn">&#9658;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="video-modal">
+        <span class="close-btn">&times;</span>
+        <video id="modal-video" controls></video>
+    </div>
+
+{% endblock %}

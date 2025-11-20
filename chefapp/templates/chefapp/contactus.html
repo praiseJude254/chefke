@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title  %}Chefke | Contact Us{% endblock  %}
+{% block content %}
+
+<!--Contact Hero-->
+<section class="contact-hero">
+    <img src="{% static 'img/hero4.jpg' %}" alt="Chefs interacting at events" class="contact-hero-img">
+    <div class="contact-hero-overlay"></div>
+    <div class="contact-hero-content">
+        <h1>Let’s Connect and Create Memorable Culinary Experiences</h1>
+        <h2>We’re here to answer questions, assist with bookings, and provide seamless support for clients and chefs alike.</h2>
+        <div class="contact-hero-buttons">
+            <a href="#booking-section" class="btn primary-btn">Book a Chef</a>
+            <a href="#contact-form" class="btn secondary-btn">Send an Inquiry</a>
+        </div>
+    </div>
+</section>
+
+<section class="contact-methods-section">
+  <div class="container">
+    <h2 class="section-title">Reach Us Anytime, Your Way</h2>
+    <div class="methods-flex">
+      <!-- Email Support -->
+      <div class="method-item">
+        <div class="method-icon">
+          <img src="{% static 'icons/envelope.png' %}" alt="Email Icon">
+        </div>
+        <h4>Email Support</h4>
+        <p>support@chefke.co.ke</p>
+        <a href="mailto:support@chefke.co.ke" class="btn-method">Send Email</a>
+      </div>
+
+      <!-- Phone / WhatsApp -->
+      <div class="method-item">
+        <div class="method-icon">
+          <img src="{% static 'icons/phone.png' %}" alt="Phone Icon">
+        </div>
+        <h4>Phone / WhatsApp</h4>
+        <p>+254 XXX XXX XXX</p>
+        <a href="tel:+254XXXXXXXXX" class="btn-method">Call or Message</a>
+      </div>
+
+      <!-- Office Location -->
+      <div class="method-item">
+        <div class="method-icon">
+          <img src="{% static 'icons/map-pin.png' %}" alt="Map Pin Icon">
+        </div>
+        <h4>Office Location</h4>
+        <p>Nairobi, Kenya – By Appointment Only</p>
+        <a href="https://goo.gl/maps/xxxx" target="_blank" class="btn-method">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-form-section">
+  <div class="container">
+    <h2 class="section-title">Send Us a Message</h2>
+    <form class="contact-form" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      
+      <div class="form-group">
+        <select name="subject" required>
+          <option value="" disabled selected>Subject / Inquiry Type</option>
+          <option value="General">General</option>
+          <option value="Booking">Booking</option>
+          <option value="Partnership">Partnership</option>
+          <option value="Support">Support</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      </div>
+      
+      <div class="form-group">
+        <input type="file" name="attachment" accept=".pdf,.doc,.docx,.jpg,.png">
+      </div>
+      
+      <div class="form-actions">
+        <button type="submit" class="btn-contact">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<section class="location-section">
+  <div class="container">
+    <h2 class="section-title">Our Location</h2>
+    
+    <div class="map-container">
+      <!-- Replace src with your Google Maps embed link -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.123456789!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f117123456789%3A0xabcdef1234567890!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus" 
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="location-details">
+      <p><strong>Address:</strong> Nairobi, Kenya – By Appointment Only</p>
+      <p><strong>Operating Hours:</strong> Mon–Fri: 9am – 6pm</p>
+      <p><strong>Parking:</strong> Available on-site</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title">Need Quick Answers?</h2>
+    
+    <div class="faq-accordion">
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          How do I book a chef?
+          <span class="faq-toggle">&#43;</span>
+        </button>
+        <div class="faq-answer">
+          <p>You can book a chef directly through our platform by selecting your preferred chef and completing the booking form. You will receive confirmation and all relevant details via email.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What is ChefKe’s verification process?
+          <span class="faq-toggle">&#43;</span>
+        </button>
+        <div class="faq-answer">
+          <p>All chefs undergo a rigorous vetting process, including background checks, skill assessments, and reference verification to ensure premium quality and reliability.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Can I request a chef recommendation?
+          <span class="faq-toggle">&#43;</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! Our team can suggest chefs based on your event type, cuisine preferences, and location to match your exact requirements.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How do I become a ChefKe partner?
+          <span class="faq-toggle">&#43;</span>
+        </button>
+        <div class="faq-answer">
+          <p>We welcome chefs and catering professionals to apply through our platform. Complete the partnership form, undergo our vetting process, and start receiving premium bookings.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="social-connect-section">
+  <div class="container">
+    <h2 class="section-title">Connect with Us Online</h2>
+    <p class="section-subtitle">Follow ChefKe on social media or reach out directly for collaborations and updates.</p>
+    
+    <div class="social-icons">
+      <a href="https://instagram.com" target="_blank" class="social-icon instagram">
+        <img src="{% static 'icons/instagram.svg' %}" alt="Instagram">
+        <span>Instagram</span>
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="social-icon linkedin">
+        <img src="{% static 'icons/linkedin.svg' %}" alt="LinkedIn">
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://facebook.com" target="_blank" class="social-icon facebook">
+        <img src="{% static 'icons/facebook.svg' %}" alt="Facebook">
+        <span>Facebook</span>
+      </a>
+      <a href="https://twitter.com" target="_blank" class="social-icon twitter">
+        <img src="{% static 'icons/twitter.svg' %}" alt="Twitter">
+        <span>Twitter</span>
+      </a>
+      <a href="https://wa.me/254XXXXXXXXX" target="_blank" class="social-icon whatsapp">
+        <img src="{% static 'icons/whatsapp.svg' %}" alt="WhatsApp">
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="contact-cta-section">
+  <div class="container">
+    <h2 class="cta-title">Ready to Elevate Your Culinary Experience?</h2>
+    <p class="cta-subtitle">Reach out today or book your premium chef with just a few clicks.</p>
+    
+    <div class="cta-buttons">
+      <a href="#booking" class="cta-btn primary-btn">Book a Chef</a>
+      <a href="#contact-form" class="cta-btn secondary-btn">Send an Inquiry</a>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

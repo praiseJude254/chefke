@@ -1,46 +1,44 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title  %}chefke{% endblock  %}
+{% block title  %}Chefke | Landing Page{% endblock  %}
 {% block content %}
-
-{% load static %}
 
   <!-- Hero Section -->
   <section class="hero" style="background: url('{% static 'img/hero1.jpg' %}') no-repeat center center/cover;">
-  <div class="hero-content">
-    <h1>Welcome to ChefKe</h1>
-    <h2>Hire Professional Chefs in Kenya</h2>
-    <p>From private cookouts to large events, ChefKe connects you with the best chefs across the country.</p>
-    <div class="hero-buttons">
-      <a href="#" class="btn primary-btn">Get Started</a>
-      <a href="#" class="btn secondary-btn">Learn More</a>
+    <div class="hero-content">
+        <h1>Welcome to ChefKe</h1>
+        <h2>Hire Professional Chefs in Kenya</h2>
+        <p>From private cookouts to large events, ChefKe connects you with the best chefs across the country.</p>
+        <div class="hero-buttons">
+          <a href="{% url 'aboutus' %}" class="btn primary-btn">Get Started</a>
+          <a href="{% url 'aboutus' %}" class="btn secondary-btn">Learn More</a>
+        </div>
+        <div class="scroll-down">
+          <span>&#8595;</span>
+        </div>
     </div>
-    <div class="scroll-down">
-      <span>&#8595;</span>
-    </div>
-  </div>
   </section>
 
-
+  <!-- About Us section-->
   <section class="about">
-  <div class="about-container">
-    <!-- Left: Text -->
-    <div class="about-text">
-      <h2>About Us</h2>
-      <h3>Who We Are</h3>
-      <p>
-        At <strong>ChefKe</strong>, we connect you with the finest chefs in Kenya for private
-        cookouts, events, and unforgettable dining experiences. Our mission is to bring luxury,
-        taste, and professionalism to your table.
-      </p>
-      <a href="#contact" class="about-cta">Learn More</a>
-    </div>
+    <div class="about-container">
+      <!-- Left: Text -->
+      <div class="about-text">
+        <h2>About Us</h2>
+        <h3>Who We Are</h3>
+        <p>
+          At <strong>ChefKe</strong>, we connect you with the finest chefs in Kenya for private
+          cookouts, events, and unforgettable dining experiences. Our mission is to bring luxury,
+          taste, and professionalism to your table.
+        </p>
+        <a href="{% url 'aboutus' %}" class="about-cta">Learn More</a>
+      </div>
 
-    <!-- Right: Image -->
-    <div class="about-image">
-      <img src="{% static 'img/abt1.png' %}" alt="ChefKe - About Us">
+      <!-- Right: Image -->
+      <div class="about-image">
+        <img src="{% static 'img/abt1.png' %}" alt="ChefKe - About Us">
+      </div>
     </div>
-  </div>
   </section>
 
   <!-- Who We Are Section -->
@@ -55,22 +53,22 @@
     </p>
 
     <div class="cards">
-      <a href="#" class="service-card">
+      <a href="{% url 'services' %}" class="service-card">
         <img src="{% static 'img/hero1.jpg' %}" alt="Private Dining">
         <h4>Private Dining</h4>
         <p>Exclusive experiences tailored to you.</p>
       </a>
-      <a href="#" class="service-card">
+      <a href="{% url 'services' %}" class="service-card">
         <img src="{% static 'img/hero2.jpg' %}" alt="Event Catering">
         <h4>Event Catering</h4>
         <p>Luxury menus for weddings & events.</p>
       </a>
-      <a href="#" class="service-card">
+      <a href="{% url 'services' %}" class="service-card">
         <img src="{% static 'img/hero3.jpg' %}" alt="Corporate Services">
         <h4>Corporate Services</h4>
         <p>Professional dining for business needs.</p>
       </a>
-      <a href="#" class="service-card">
+      <a href="{% url 'services' %}" class="service-card">
         <img src="{% static 'img/hero4.jpg' %}" alt="Cooking Classes">
         <h4>Cooking Classes</h4>
         <p>Learn from world-class chefs.</p>
@@ -78,51 +76,406 @@
     </div>
 
     <div class="cta-wrapper">
-      <a href="#" class="cta-btn">Explore More</a>
+      <a href="{% url 'services' %}" class="cta-btn">Explore More</a>
     </div>
   </div>
   </section>
 
-  <!-- Top Chefs Section -->
-  <section class="top-chefs">
-  <div class="section-header">
-    <h2>Our Top Chefs</h2>
-    <p class="subtitle">Meet the culinary artists behind our finest dishes</p>
-    <p class="intro">
-      Our chefs are the heartbeat of our kitchen, combining passion, creativity, and years of expertise to craft dishes that delight your senses. Each one brings their unique flair, ensuring an unforgettable dining experience.
-    </p>
-  </div>
+  <!-- HOW IT WORKS SECTION -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">A Premium Experience in 3 Steps</h2>
+      <p class="section-intro">Quickly understand how ChefKe makes your event exceptional and seamless.</p>
+      
+      <div class="steps-cards">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="icon-wrapper">
+            <img src="img/icons/magnifying-glass.png" alt="Browse & Select Icon">
+          </div>
+          <h4>Browse & Select</h4>
+          <p>Choose from verified chefs or let ChefKe recommend the perfect match for your event.</p>
+        </div>
 
-  <div class="chef-cards">
-    <div class="chef-card">
-      <img src="{% static 'img/abt1.png' %}" alt="Chef 1">
-      <h3>Chef Jerry</h3>
-      <p class="desc">Master of French cuisine</p>
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="icon-wrapper">
+            <img src="img/icons/calendar-check.png" alt="Book & Secure Icon">
+          </div>
+          <h4>Book & Secure</h4>
+          <p>Check availability, book instantly, and pay securely.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="icon-wrapper">
+            <img src="img/icons/star-rating.png" alt="Enjoy & Review Icon">
+          </div>
+          <h4>Enjoy & Review</h4>
+          <p>Experience gourmet service and leave ratings to ensure quality.</p>
+        </div>
+      </div>
     </div>
-
-    <div class="chef-card">
-        <img src="{% static 'img/abt1.png' %}" alt="Chef 2">
-      <h3>Chef Chandi</h3>
-      <p class="desc">Specialist in Italian flavors</p>
-    </div>
-
-    <div class="chef-card">
-      <img src="{% static 'img/abt1.png' %}" alt="Chef 3">
-      <h3>Chef Opati</h3>
-      <p class="desc">Authentic Japanese culinary artist</p>
-    </div>
-
-    <div class="chef-card">
-      <img src="{% static 'img/abt1.png' %}" alt="Chef 4">
-      <h3>Chef Grace</h3>
-      <p class="desc">Expert in modern fusion cuisine</p>
-    </div>
-  </div>
-
-  <div class="cta-container">
-    <a href="#" class="luxury-btn">Meet All Chefs</a>
-  </div>
   </section>
 
+  <!-- FEATURED CHEFS SECTION -->
+  <section class="featured-chefs">
+    <div class="container">
+      <h2 class="section-title">Meet Our Elite Chefs</h2>
+      <p class="section-intro">Curated profiles of verified chefs and catering companies ready to elevate your events.</p>
+
+      <div class="chef-cards">
+        <!-- Chef Card 1 -->
+        <div class="chef-card">
+          <div class="chef-img">
+            <img src="{% static 'img/abt1.png' %}" alt="Chef Peter Mwangi">
+            <div class="verified-badge">✔ Verified</div>
+          </div>
+          <h3>Chef Peter Mwangi</h3>
+          <p class="specialty">Kenyan Traditional</p>
+          <div class="rating">
+            <span>★★★★☆</span>
+            <span class="reviews">(105 reviews)</span>
+          </div>
+          <p class="price">KES 5,500/hr</p>
+          <div class="btn-group">
+            <a href="#" class="luxury-btn">View Profile</a>
+            <a href="#" class="book-btn">Book Chef</a>
+          </div>
+        </div>
+
+        <!-- Chef Card 2 -->
+        <div class="chef-card">
+          <div class="chef-img">
+            <img src="img/chefs/chef2.jpg" alt="Chef Jane Wambui">
+            <div class="verified-badge">✔ Verified</div>
+          </div>
+          <h3>Chef Jane Wambui</h3>
+          <p class="specialty">French Cuisine</p>
+          <div class="rating">
+            <span>★★★★★</span>
+            <span class="reviews">(98 reviews)</span>
+          </div>
+          <p class="price">KES 7,500/hr</p>
+          <div class="btn-group">
+            <a href="#" class="luxury-btn">View Profile</a>
+            <a href="#" class="book-btn">Book Chef</a>
+          </div>
+        </div>
+
+        <!-- Chef Card 3 -->
+        <div class="chef-card">
+          <div class="chef-img">
+            <img src="img/chefs/chef3.jpg" alt="Chef Michael Otieno">
+            <div class="verified-badge">✔ Verified</div>
+          </div>
+          <h3>Chef Michael Otieno</h3>
+          <p class="specialty">Asian Fusion</p>
+          <div class="rating">
+            <span>★★★★☆</span>
+            <span class="reviews">(75 reviews)</span>
+          </div>
+          <p class="price">KES 6,000/hr</p>
+          <div class="btn-group">
+            <a href="#" class="luxury-btn">View Profile</a>
+            <a href="#" class="book-btn">Book Chef</a>
+          </div>
+        </div>
+
+        <!-- International Chef -->
+        <div class="chef-card">
+          <div class="chef-img">
+            <img src="img/chefs/chef4.jpg" alt="Chef Marco Rossi">
+            <div class="verified-badge">✔ Verified</div>
+          </div>
+          <h3>Chef Marco Rossi</h3>
+          <p class="specialty">Italian Cuisine</p>
+          <div class="rating">
+            <span>★★★★★</span>
+            <span class="reviews">(200 reviews)</span>
+          </div>
+          <p class="price">USD 90/hr</p>
+          <div class="btn-group">
+            <a href="#" class="luxury-btn">View Profile</a>
+            <a href="#" class="book-btn">Book Chef</a>
+          </div>
+        </div>
+
+        <!-- International Chef -->
+        <div class="chef-card">
+          <div class="chef-img">
+            <img src="img/chefs/chef4.jpg" alt="Chef Marco Rossi">
+            <div class="verified-badge">✔ Verified</div>
+          </div>
+          <h3>Chef Marco Rossi</h3>
+          <p class="specialty">Italian Cuisine</p>
+          <div class="rating">
+            <span>★★★★★</span>
+            <span class="reviews">(200 reviews)</span>
+          </div>
+          <p class="price">USD 90/hr</p>
+          <div class="btn-group">
+            <a href="#" class="luxury-btn">View Profile</a>
+            <a href="#" class="book-btn">Book Chef</a>
+          </div>
+        </div>
+        
+        <!-- International Chef -->
+        <div class="chef-card">
+          <div class="chef-img">
+            <img src="img/chefs/chef4.jpg" alt="Chef Marco Rossi">
+            <div class="verified-badge">✔ Verified</div>
+          </div>
+          <h3>Chef Marco Rossi</h3>
+          <p class="specialty">Italian Cuisine</p>
+          <div class="rating">
+            <span>★★★★★</span>
+            <span class="reviews">(200 reviews)</span>
+          </div>
+          <p class="price">USD 90/hr</p>
+          <div class="btn-group">
+            <a href="#" class="luxury-btn">View Profile</a>
+            <a href="#" class="book-btn">Book Chef</a>
+          </div>
+        </div>
+      </div>
+      <div class="cta-container">
+        <a href="#" class="luxury-btn">Meet All Chefs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES & EVENTS SECTION -->
+  <section class="services-section">
+      <div class="services-container">
+          <!-- Section Header -->
+          <h2 class="services-title">Services for Every Occasion</h2>
+          <p class="services-subtitle">
+              Whether it’s a corporate function, wedding, private dinner, or tourist experience — we’ve got you covered.
+          </p>
+
+          <!-- Service Cards -->
+          <div class="services-grid">
+
+              <!-- Corporate Events -->
+              <div class="service-card">
+                  <div class="service-icon">
+                      <img src="{% static 'icons/briefcase.svg' %}" alt="Corporate Events">
+                  </div>
+                  <h3>Corporate Events</h3>
+                  <p>Professional catering and chef services for meetings, conferences, and corporate gatherings.</p>
+                  <a href="{% url 'booking' %}" class="btn-secondary">Book Now</a>
+              </div>
+
+              <!-- Weddings & Celebrations -->
+              <div class="service-card">
+                  <div class="service-icon">
+                      <img src="{% static 'icons/ring.svg' %}" alt="Weddings & Celebrations">
+                  </div>
+                  <h3>Weddings & Celebrations</h3>
+                  <p>Memorable culinary experiences for weddings, anniversaries, and milestone celebrations.</p>
+                  <a href="{% url 'booking' %}" class="btn-secondary">Book Now</a>
+              </div>
+
+              <!-- Private Dining -->
+              <div class="service-card">
+                  <div class="service-icon">
+                      <img src="{% static 'icons/plate.svg' %}" alt="Private Dining">
+                  </div>
+                  <h3>Private Dining</h3>
+                  <p>Exclusive in-home or intimate dining experiences with gourmet chefs.Experience fine dining</p>
+                  <a href="{% url 'booking' %}" class="btn-secondary">Book Now</a>
+              </div>
+
+              <!-- Tourism & Luxury Experiences -->
+              <div class="service-card">
+                  <div class="service-icon">
+                      <img src="{% static 'icons/villa.svg' %}" alt="Tourism & Luxury Experiences">
+                  </div>
+                  <h3>Tourism & Luxury Experiences</h3>
+                  <p>Premium culinary services integrated with luxury travel, resorts, and private tours.</p>
+                  <a href="{% url 'booking' %}" class="btn-secondary">Book Now</a>
+              </div>
+
+          </div>
+      </div>
+  </section>
+
+  <!-- WHY CHOOSE US SECTION-->
+  <section class="why-chefke-section">
+    <div class="container">
+
+        <!-- Headline -->
+        <h2 class="section-title">Why Clients Love ChefKe</h2>
+        <h3 class="section-subtitle">Verified Professionals, Premium Service, Peace of Mind.</h3>
+
+        <div class="feature-cards">
+            <!-- Feature Card 1 -->
+            <div class="feature-card">
+                <img src="{% static 'icons/verified.png' %}" alt="Verified Chefs">
+                <h4>Verified Chefs & Caterers</h4>
+                <p>ID & certification verification for complete trust.</p>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="feature-card">
+                <img src="{% static 'icons/calendar.png' %}" alt="Real-Time Availability">
+                <h4>Real-Time Availability</h4>
+                <p>Never double-booked – always up-to-date schedules.</p>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="feature-card">
+                <img src="{% static 'icons/payment.png' %}" alt="Secure Payments">
+                <h4>Secure & Convenient Payments</h4>
+                <p>Deposit & payout system for safe transactions.</p>
+            </div>
+
+            <!-- Feature Card 4 -->
+            <div class="feature-card">
+                <img src="{% static 'icons/rating.png' %}" alt="Ratings & Accountability">
+                <h4>Ratings & Accountability</h4>
+                <p>Trustworthy client & chef feedback for peace of mind.</p>
+            </div>
+        </div>
+    </div>
+  </section>
+  
+  <!-- TESTIMONIALS SECTION-->
+  <section class="testimonials-section">
+      <div class="container">
+
+          <!-- Headline -->
+          <h2 class="section-title">Trusted by Clients Across Kenya</h2>
+          <h3 class="section-subtitle">Here’s what our clients & chefs have to say</h3>
+
+          <!-- Testimonial Slider -->
+          <div class="testimonial-slider">
+              <!-- Testimonial Card 1 -->
+              <div class="testimonial-card">
+                  <img src="{% static 'img/testimonials/client1.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                  <p class="testimonial-text">"ChefKe made our corporate dinner unforgettable. Professional chefs and seamless service!"</p>
+                  <h4 class="testimonial-name">Jane W.</h4>
+                  <div class="testimonial-rating">★★★★★</div>
+              </div>
+
+              <!-- Testimonial Card 2 -->
+              <div class="testimonial-card">
+                  <img src="{% static 'img/testimonials/client2.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                  <p class="testimonial-text">"Our wedding catering was flawless, every guest loved it!"</p>
+                  <h4 class="testimonial-name">Mark K.</h4>
+                  <div class="testimonial-rating">★★★★★</div>
+              </div>
+
+              <!-- Testimonial Card 3 -->
+              <div class="testimonial-card">
+                  <img src="{% static 'img/testimonials/client3.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                  <p class="testimonial-text">"Premium chefs, responsive team, and smooth booking experience. Highly recommend!"</p>
+                  <h4 class="testimonial-name">Sophia N.</h4>
+                  <div class="testimonial-rating">★★★★★</div>
+              </div>
+
+              <!-- Testimonial Card 1 -->
+              <div class="testimonial-card">
+                  <img src="{% static 'img/testimonials/client1.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                  <p class="testimonial-text">"ChefKe made our corporate dinner unforgettable. Professional chefs and seamless service!"</p>
+                  <h4 class="testimonial-name">Jane W.</h4>
+                  <div class="testimonial-rating">★★★★★</div>
+              </div>
+
+              <!-- Testimonial Card 2 -->
+              <div class="testimonial-card">
+                  <img src="{% static 'img/testimonials/client2.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                  <p class="testimonial-text">"Our wedding catering was flawless, every guest loved it!"</p>
+                  <h4 class="testimonial-name">Mark K.</h4>
+                  <div class="testimonial-rating">★★★★★</div>
+              </div>
+
+              <!-- Testimonial Card 3 -->
+              <div class="testimonial-card">
+                  <img src="{% static 'img/testimonials/client3.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                  <p class="testimonial-text">"Premium chefs, responsive team, and smooth booking experience. Highly recommend!"</p>
+                  <h4 class="testimonial-name">Sophia N.</h4>
+                  <div class="testimonial-rating">★★★★★</div>
+              </div>              
+
+
+          </div>
+      </div>
+  </section>
+
+  <!-- BOOKING / CTA SECTION -->
+  <section class="booking-cta-section">
+      <div class="booking-cta-container">
+          <!-- Headline -->
+          <h2 class="booking-cta-title">Book Your Chef in Minutes</h2>
+          <p class="booking-cta-subtitle">
+              Select your chef or let us assign the perfect professional for your event.
+          </p>
+
+          <!-- Booking Form -->
+          <form class="booking-cta-form">
+              <div class="form-group">
+                  <label for="event-type">Event Type</label>
+                  <select id="event-type" name="event-type" required>
+                      <option value="" disabled selected>Select Event Type</option>
+                      <option value="corporate">Corporate Event</option>
+                      <option value="wedding">Wedding</option>
+                      <option value="private">Private Dining</option>
+                      <option value="tourism">Tourism & Luxury Experience</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                  <label for="location">Event Location</label>
+                  <input type="text" id="location" name="location" placeholder="City / Venue" required>
+              </div>
+
+              <div class="form-group">
+                  <label for="date">Event Date</label>
+                  <input type="date" id="date" name="date" required>
+              </div>
+
+              <div class="form-group">
+                  <label for="time">Event Time</label>
+                  <input type="time" id="time" name="time" required>
+              </div>
+
+              <div class="form-group">
+                  <label for="chef-pref">Chef Preference</label>
+                  <select id="chef-pref" name="chef-pref" required>
+                      <option value="" disabled selected>Select Preference</option>
+                      <option value="manual">Choose Chef Manually</option>
+                      <option value="auto">Auto-Assign Perfect Chef</option>
+                  </select>
+              </div>
+
+              <!-- CTA Buttons -->
+              <div class="form-actions">
+                  <button type="submit" class="luxury-btn">Check Availability & Book Now</button>
+                  <a href="#" class="book-btn">Join as a Chef</a>
+              </div>
+          </form>
+      </div>
+  </section>
+
+  <!-- ABOUT / PLATFORM SECTION -->
+  <section class="about-section">
+      <div class="about-container">
+          <!-- Headline -->
+          <h2 class="about-title">ChefKe <span class="abt-text">Redefining Culinary Experiences in Kenya</span></h2>
+
+          <!-- Subtext -->
+          <p class="about-text">
+              At ChefKe, we bring together the finest culinary professionals to deliver luxury dining experiences across Kenya.  
+              Our team of verified chefs and catering experts ensures every event from intimate private dinners to grand corporate functions is executed flawlessly, leaving lasting memories for our clients.
+          </p>
+
+          <!-- Visual -->
+          <div class="about-visual">
+              <img src="{% static 'img/abt1.png' %}" alt="ChefKe Team" class="about-image">
+          </div>
+      </div>
+  </section>
 
 {% endblock  %}

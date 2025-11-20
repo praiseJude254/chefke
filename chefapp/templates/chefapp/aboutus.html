@@ -1,0 +1,447 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title  %}Chefke | About Us{% endblock  %}
+{% block content %}
+
+    <!-- About Us Hero Section -->
+    <section class="abt-hero-section">
+        <!-- Background Image -->
+        <img src="{% static 'img/hero3.jpg' %}" alt="About Hero Background" class="abt-hero-bg">
+
+        <div class="abt-hero-content">
+            <h1>Crafting Culinary Excellence</h1>
+            <h2>Redefining Fine Dining Experiences in Kenya</h2>
+            <p>At ChefKe, we connect individuals and businesses with elite chefs committed to delivering unforgettable moments through world-class gastronomy.</p>
+            <div class="abt-hero-buttons">
+                <a href="#our-mission" class="abt-btn abt-primary-btn">Our Story</a>
+                <a href="#why-chefke" class="abt-btn abt-secondary-btn">Why Choose Us</a>
+            </div>
+            <div class="abt-scroll-down">
+                <span>&#8595;</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us section-->
+    <section class="about">
+        <div class="about-container">
+        <!-- Left: Text -->
+        <div class="about-text">
+            <h2>About Us</h2>
+            <h3>Who We Are</h3>
+            <p>
+            At <strong>ChefKe</strong>, we connect you with the finest chefs in Kenya for private
+            cookouts, events, and unforgettable dining experiences. Our mission is to bring luxury,
+            taste, and professionalism to your table.
+            </p>
+            <a href="{% url 'aboutus' %}" class="about-cta">Learn More</a>
+        </div>
+
+        <!-- Right: Image -->
+        <div class="about-image">
+            <img src="{% static 'img/abt1.png' %}" alt="ChefKe - About Us">
+        </div>
+        </div>
+    </section>    
+
+    <!-- Mission and Vision Section-->
+    <section class="chefke-mv-section">
+        <div class="chefke-mv-bg">
+            <img src="{% static 'img/hero1.jpg' %}" alt="Mission Vision Background" class="chefke-mv-bg-img">
+
+            <div class="chefke-mv-container">
+                <!-- Mission -->
+                <div class="chefke-mv-box">
+                    <h2 class="chefke-mv-title">Our Mission</h2>
+                    <span class="chefke-mv-underline"></span>
+                    <p class="chefke-mv-text">
+                        “To revolutionize how premium culinary services are sourced, vetted, and delivered — 
+                        ensuring safety, convenience, and unmatched professionalism.”
+                    </p>
+                </div>
+
+                <!-- Vision -->
+                <div class="chefke-mv-box">
+                    <h2 class="chefke-mv-title">Our Vision</h2>
+                    <span class="chefke-mv-underline"></span>
+                    <p class="chefke-mv-text">
+                        “To become Africa’s most trusted platform for on-demand chefs and catering excellence.”
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CULINARY IMPACT SECTION -->
+    <section class="culinary-impact-section">
+        <div class="container">
+            <h2 class="section-title">Our Culinary Impact</h2>
+            <p class="section-subtitle">Delivering excellence, one event at a time.</p>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3 class="metric-number" data-target="300">0</h3>
+                    <p class="metric-text">Premium Events Served</p>
+                </div>
+
+                <div class="metric-card">
+                    <h3 class="metric-number" data-target="94">0%</h3>
+                    <p class="metric-text">Client Satisfaction</p>
+                </div>
+
+                <div class="metric-card">
+                    <h3 class="metric-number" data-target="48">0</h3>
+                    <p class="metric-text">Avg Booking Lead Time (hrs)</p>
+                </div>
+
+                <div class="metric-card">
+                    <h3 class="metric-number" data-target="5">Top 0%</h3>
+                    <p class="metric-text">Chef Talent Acceptance Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposotion Section -->
+    <section class="chefke-problem-section">
+        <div class="chefke-problem-container">
+            
+            <!-- LEFT SIDE – PROBLEMS -->
+            <div class="chefke-problem-left">
+                <h2 class="chefke-section-title">Because Hiring the Right Chef Shouldn’t Be Guesswork</h2>
+
+                <div class="chefke-problem-cards">
+                    
+                    <!-- Card 1 -->
+                    <div class="chefke-problem-card">
+                        <h3 class="chefke-problem-heading">Lack of Trust & Safety</h3>
+                        <p class="chefke-problem-text">No formal vetting, unreliable experience.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="chefke-problem-card">
+                        <h3 class="chefke-problem-heading">Time-Wasting Bookings</h3>
+                        <p class="chefke-problem-text">Manual negotiations, unclear availability.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="chefke-problem-card">
+                        <h3 class="chefke-problem-heading">No Quality Guarantee</h3>
+                        <p class="chefke-problem-text">Clients unsure of capabilities & consistency.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE – SOLUTION -->
+            <div class="chefke-problem-right">
+                <div class="chefke-solution-box">
+                    <h3 class="chefke-solution-title">Our Purpose</h3>
+                    <span class="chefke-solution-underline"></span>
+                    <p class="chefke-solution-text">
+                        ChefKe solves this by combining expert vetting, premium chef profiles, verified portfolios,
+                        availability management, and digital booking control — ensuring confidence, convenience, and elite service.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Our Proccesses Section-->
+    <section class="how-it-works">
+    <div class="container">
+        <h2 class="section-title">Our Process</h2>
+        <p class="section-intro">Only 22% of applicants make it to our roster.</p>
+
+        <div class="steps-cards">
+
+        <!-- Step 01 -->
+        <div class="step-card">
+            <div class="icon-wrapper">
+            <img src="{% static 'img/icons/application.png' %}" alt="Application Icon">
+            </div>
+            <h4>Step 01 – Application & Background Check</h4>
+            <p>Initial vetting to ensure candidates meet our high standards of professionalism.</p>
+        </div>
+
+        <!-- Step 02 -->
+        <div class="step-card">
+            <div class="icon-wrapper">
+            <img src="{% static 'img/icons/verification.png' %}" alt="Verification Icon">
+            </div>
+            <h4>Step 02 – Profile Verification</h4>
+            <p>Confirming identities, credentials, and past experience to maintain trust.</p>
+        </div>
+
+        <!-- Step 03 -->
+        <div class="step-card">
+            <div class="icon-wrapper">
+            <img src="{% static 'img/icons/skill-assessment.png' %}" alt="Skill Assessment Icon">
+            </div>
+            <h4>Step 03 – Live Skill Assessment</h4>
+            <p>Hands-on evaluation to ensure culinary excellence and consistency.</p>
+        </div>
+
+        <!-- Step 04 -->
+        <div class="step-card">
+            <div class="icon-wrapper">
+            <img src="{% static 'img/icons/contract.png' %}" alt="Contract Icon">
+            </div>
+            <h4>Step 04 – Contractual Approval</h4>
+            <p>Formalizing agreements and ensuring legal compliance for smooth operations.</p>
+        </div>
+
+        <!-- Step 05 -->
+        <div class="step-card">
+            <div class="icon-wrapper">
+            <img src="{% static 'img/icons/onboarding.png' %}" alt="Onboarding Icon">
+            </div>
+            <h4>Step 05 – Onboarding & Digital Portfolio</h4>
+            <p>Creating polished profiles with verified portfolios and availability schedules.</p>
+        </div>
+
+        <!-- Step 06 -->
+        <div class="step-card">
+            <div class="icon-wrapper">
+            <img src="{% static 'img/icons/rating.png' %}" alt="Performance Tracking Icon">
+            </div>
+            <h4>Step 06 – Rating & Performance Tracking</h4>
+            <p>Continuous evaluation ensures only top-performing chefs remain listed.</p>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- PREMIUM PILLARS SECTION -->
+    <section class="premium-pillars-section-alt">
+        <h2 class="section-title">What Makes Us Different</h2>
+        <p class="section-subtitle">Our platform is designed to ensure only the best culinary talent, unmatched convenience, and a seamless premium experience for every client.</p>
+
+        <div class="pillars-container">
+            <!-- Pillar 1 -->
+            <div class="pillar-item">
+                <div class="pillar-icon">
+                    <img src="{% static 'img/icons/elite-talent.png' %}" alt="Elite Vetted Talent Icon">
+                </div>
+                <div class="pillar-text">
+                    <h4>Elite Vetted Talent</h4>
+                    <p>Only the top 22% of applicants make it through our thorough vetting process to ensure excellence and trust.</p>
+                </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="pillar-item reverse">
+                <div class="pillar-icon">
+                    <img src="{% static 'img/icons/digital-safety.png' %}" alt="Digital Convenience & Safety Icon">
+                </div>
+                <div class="pillar-text">
+                    <h4>Digital Convenience & Safety</h4>
+                    <p>Seamless bookings, verified profiles, and secure communication make hiring your chef effortless and worry-free.</p>
+                </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="pillar-item">
+                <div class="pillar-icon">
+                    <img src="{% static 'img/icons/bespoke-matchmaking.png' %}" alt="Bespoke Matchmaking Icon">
+                </div>
+                <div class="pillar-text">
+                    <h4>Bespoke Matchmaking</h4>
+                    <p>We connect clients with chefs perfectly suited for their event style, cuisine preference, and occasion.</p>
+                </div>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="pillar-item reverse">
+                <div class="pillar-icon">
+                    <img src="{% static 'img/icons/performance-reputation.png' %}" alt="Performance-Based Reputation Icon">
+                </div>
+                <div class="pillar-text">
+                    <h4>Performance-Based Reputation</h4>
+                    <p>Chefs are rated on every engagement, ensuring consistent quality and reliability for future clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION-->
+    <section class="testimonials-section">
+        <div class="container">
+
+            <!-- Headline -->
+            <h2 class="section-title">Trusted by Clients Across Kenya</h2>
+            <h3 class="section-subtitle">Here’s what our clients & chefs have to say</h3>
+
+            <!-- Testimonial Slider -->
+            <div class="testimonial-slider">
+                <!-- Testimonial Card 1 -->
+                <div class="testimonial-card">
+                    <img src="{% static 'img/testimonials/client1.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                    <p class="testimonial-text">"ChefKe made our corporate dinner unforgettable. Professional chefs and seamless service!"</p>
+                    <h4 class="testimonial-name">Jane W.</h4>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+
+                <!-- Testimonial Card 2 -->
+                <div class="testimonial-card">
+                    <img src="{% static 'img/testimonials/client2.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                    <p class="testimonial-text">"Our wedding catering was flawless, every guest loved it!"</p>
+                    <h4 class="testimonial-name">Mark K.</h4>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="testimonial-card">
+                    <img src="{% static 'img/testimonials/client3.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                    <p class="testimonial-text">"Premium chefs, responsive team, and smooth booking experience. Highly recommend!"</p>
+                    <h4 class="testimonial-name">Sophia N.</h4>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+
+                <!-- Testimonial Card 1 -->
+                <div class="testimonial-card">
+                    <img src="{% static 'img/testimonials/client1.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                    <p class="testimonial-text">"ChefKe made our corporate dinner unforgettable. Professional chefs and seamless service!"</p>
+                    <h4 class="testimonial-name">Jane W.</h4>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+
+                <!-- Testimonial Card 2 -->
+                <div class="testimonial-card">
+                    <img src="{% static 'img/testimonials/client2.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                    <p class="testimonial-text">"Our wedding catering was flawless, every guest loved it!"</p>
+                    <h4 class="testimonial-name">Mark K.</h4>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="testimonial-card">
+                    <img src="{% static 'img/testimonials/client3.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                    <p class="testimonial-text">"Premium chefs, responsive team, and smooth booking experience. Highly recommend!"</p>
+                    <h4 class="testimonial-name">Sophia N.</h4>
+                    <div class="testimonial-rating">★★★★★</div>
+                </div>              
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING / CTA SECTION -->
+    <section class="booking-cta-section">
+        <div class="booking-cta-container">
+            <!-- Headline -->
+            <h2 class="booking-cta-title">Book Your Chef in Minutes</h2>
+            <p class="booking-cta-subtitle">
+                Select your chef or let us assign the perfect professional for your event.
+            </p>
+
+            <!-- Booking Form -->
+            <form class="booking-cta-form">
+                <div class="form-group">
+                    <label for="event-type">Event Type</label>
+                    <select id="event-type" name="event-type" required>
+                        <option value="" disabled selected>Select Event Type</option>
+                        <option value="corporate">Corporate Event</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="private">Private Dining</option>
+                        <option value="tourism">Tourism & Luxury Experience</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Event Location</label>
+                    <input type="text" id="location" name="location" placeholder="City / Venue" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Event Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Event Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="chef-pref">Chef Preference</label>
+                    <select id="chef-pref" name="chef-pref" required>
+                        <option value="" disabled selected>Select Preference</option>
+                        <option value="manual">Choose Chef Manually</option>
+                        <option value="auto">Auto-Assign Perfect Chef</option>
+                    </select>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="form-actions">
+                    <button type="submit" class="luxury-btn">Check Availability & Book Now</button>
+                    <a href="#" class="book-btn">Join as a Chef</a>
+                </div>
+            </form>
+        </div>
+    </section>    
+
+    <!-- TEAM SECTION -->
+    <section class="team-section">
+        <div class="container">
+            <!-- Section Heading -->
+            <h2 class="section-title">Founded by Culinary Experts & Tech Visionaries</h2>
+            <p class="section-subtitle">Our team combines years of creative mastery and innovative tech solutions to deliver unmatched experiences for Africa’s market.</p>
+
+            <!-- Founder Narrative -->
+            <div class="founder-card">
+                <div class="founder-img">
+                    <img src="{% static 'img/team/jude_praise.jpg' %}" alt="Founder Jude Praise Portrait">
+                </div>
+                <div class="founder-info">
+                    <h3 class="founder-name">Jude Praise</h3>
+                    <p class="founder-role">Founder & Media Expert</p>
+                    <blockquote class="founder-quote">
+                        "As a Kenyan creative and emerging software developer, I am committed to providing timely solutions to the African market and business ecosystem that meet globally competitive standards."
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Team Members / Co-Founders -->
+            <div class="team-cards">
+                <div class="team-card">
+                    <img src="{% static 'img/team/benjamin_alego.jpg' %}" alt="Benjamin Alego Portrait">
+                    <h4 class="team-name">Benjamin Alego</h4>
+                    <p class="team-role">Co-Founder & CEO, Jermaine Tech Concepts</p>
+                </div>
+                <div class="team-card">
+                    <img src="{% static 'img/team/tonny_otieno.jpg' %}" alt="Tonny Otieno Portrait">
+                    <h4 class="team-name">Tonny Otieno</h4>
+                    <p class="team-role">Co-Founder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOIN THE MOVEMENT SECTION – SPLIT LAYOUT -->
+    <section class="join-movement-split">
+        <div class="cta-split-left">
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <img src="{% static 'img/icons/chef_icon.png' %}" alt="Become a Chef Icon">
+                </div>
+                <h3>Become a Chef / Catering Partner</h3>
+                <p>Showcase your talent, get verified, and serve premium clients across Kenya.</p>
+                <a href="{% url 'aboutus' %}" class="luxury-btn">Join Now</a>
+            </div>
+        </div>
+        <div class="cta-split-right">
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <img src="{% static 'img/icons/book_icon.png' %}" alt="Book a Chef Icon">
+                </div>
+                <h3>Book a Chef Today</h3>
+                <p>Find verified chefs for your events with ease, speed, and premium quality assurance.</p>
+                <a href="{% url 'aboutus' %}" class="luxury-btn dark-btn">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
