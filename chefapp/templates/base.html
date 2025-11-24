@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}chefke{% endblock  %} </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-Bx9ab+vQxyzHCBXj1QXNTVktvDh6h4JGphicqRi269k6x1wF24y7Aq3hblSScqdMfHxmNGcVA5Nqwq0Y0XWr9w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -17,16 +19,17 @@
     <nav class="nav-center">
       <ul>
         <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'aboutus' %}">About Us</a></li>
         <li><a href="{% url 'chefs' %}">Our Chefs</a></li>
-        <li><a href="{% url 'media' %}">Events</a></li>
-        <li><a href="{% url 'media' %}">Gallery</a></li>
+        <li><a href="{% url 'events' %}">Events</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
         <li><a href="{% url 'contactus' %}">Contact</a></li>
       </ul>
     </nav>
 
     <div class="nav-right">
       <a href="{% url 'login' %}" class="btn btn-outline">Login</a>
-      <a href="{% url 'booking' %}" class="btn btn-primary">Book a Chef</a>
+      <a href="{% url 'booking' %}" class="btn btn-primary1">Book a Chef</a>
     </div>
   </header>  <!-- Navigation Bar -->
 
@@ -98,6 +101,8 @@
     <p>&copy; 2025 Chefke | Designed & Developed by <strong>Jude Praise</strong></p>
   </div>
   </footer>
-    
+
+<script src="{% static 'js/main.js' %}"></script>
+
 </body>
 </html>

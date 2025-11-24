@@ -1,0 +1,311 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title  %}Chefke | Our premium chefs{% endblock  %}
+{% block content %}
+
+    <!-- HERO / BANNER SECTION -->
+    <section class="events-hero-section">
+        <!-- Image in HTML -->
+        <div class="hero-image-wrapper">
+            <img src="{% static 'img/hero1.jpg' %}" alt="Chef Banner" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content container">
+            <!-- Headline -->
+            <h1 class="hero-title">Discover Kenya’s Finest Chefs & Catering Experts</h1>
+            <h2 class="hero-subtitle">Verified. Professional. Ready to make your event unforgettable.</h2>
+
+            <!-- Search & Filter Bar -->
+            <form class="chef-search-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Search by chef name, cuisine, or city">
+                </div>
+
+                <div class="form-group">
+                    <select>
+                        <option selected disabled>Cuisine Type</option>
+                        <option>Italian</option>
+                        <option>French</option>
+                        <option>Asian</option>
+                        <option>Continental</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select>
+                        <option selected disabled>Event Type</option>
+                        <option>Wedding</option>
+                        <option>Corporate</option>
+                        <option>Private Dinner</option>
+                        <option>Tourism Experience</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select>
+                        <option selected disabled>Rating</option>
+                        <option>5 ★</option>
+                        <option>4 ★ & above</option>
+                        <option>3 ★ & above</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-primary">Find Your Chef</button>
+            </form>
+
+            <!-- Premium Badges -->
+            <div class="hero-badges">
+                <span class="badge">Verified Chefs</span>
+                <span class="badge">Top Rated</span>
+                <span class="badge">Corporate Ready</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED CHEFS SECTION -->
+    <section class="featured-chefs">
+        <div class="container">
+            <h2 class="section-title">Meet Our Elite Chefs</h2>
+            <p class="section-intro">Curated profiles of verified chefs and catering companies ready to elevate your events.</p>
+
+            <div class="chef-cards">
+                {% for chef in elite_chefs %}
+                <div class="chef-card">
+                    <div class="chef-img">
+                        <img src="{{ chef.profile_image.url }}" alt="{{ chef.name }}">
+                        {% if chef.verified %}
+                        <div class="verified-badge">✔ Verified</div>
+                        {% endif %}
+                    </div>
+                    <h3>{{ chef.name }}</h3>
+                    <p class="specialty">{{ chef.specialty }}</p>
+                    <div class="rating">
+                        <span>{{ chef.star_rating }}</span>
+                        <span class="reviews">({{ chef.reviews_count }} reviews)</span>
+                    </div>
+                    <p class="price">{{ chef.price }} per Hour</p>
+                    <div class="btn-group">
+                        <a href="#" class="luxury-btn">View Profile</a>
+                        <a href="#" class="book-btn">Book Chef</a>
+                    </div>
+                </div>
+                {% empty %}
+                <p>No elite chefs available at the moment.</p>
+                {% endfor %}
+            </div>
+
+            <div class="cta-container">
+                <a href="{% url 'chefs' %}" class="luxury-btn">Meet All Chefs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH & FILTER SECTION -->
+    <section class="advanced-search-section">
+        <div class="container">
+
+            <!-- Headline -->
+            <h2 class="section-title">Find the Perfect Chef for Your Event</h2>
+
+            <!-- Filter Card -->
+            <div class="filter-card">
+                <form class="advanced-search-form">
+
+                    <!-- Search Bar -->
+                    <div class="form-group search-bar">
+                        <input type="text" placeholder="Search by chef name, cuisine, or city">
+                    </div>
+
+                    <!-- Cuisine Type -->
+                    <div class="form-group">
+                        <select>
+                            <option selected disabled>Cuisine Type</option>
+                            <option>African</option>
+                            <option>Continental</option>
+                            <option>Italian</option>
+                            <option>Asian</option>
+                            <option>Fusion</option>
+                        </select>
+                    </div>
+
+                    <!-- Event Type -->
+                    <div class="form-group">
+                        <select>
+                            <option selected disabled>Event Type</option>
+                            <option>Corporate</option>
+                            <option>Wedding</option>
+                            <option>Private Dinner</option>
+                            <option>Tourist Experience</option>
+                        </select>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="form-group">
+                        <label for="price-range">Price Range (KES)</label>
+                        <input type="range" id="price-range" name="price-range" min="1000" max="50000" step="500">
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="form-group">
+                        <label for="availability">Availability</label>
+                        <input type="date" id="availability" name="availability">
+                    </div>
+
+                    <!-- Location -->
+                    <div class="form-group">
+                        <select>
+                            <option selected disabled>Select City</option>
+                            <option>Nairobi</option>
+                            <option>Mombasa</option>
+                            <option>Kisumu</option>
+                            <option>Nakuru</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div class="form-group">
+                        <select>
+                            <option selected disabled>Rating</option>
+                            <option>5 ★</option>
+                            <option>4 ★ & above</option>
+                            <option>3 ★ & above</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary">Search Chefs</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHEF LISTINGS / FEATURED CHEFS SECTION -->
+    <section class="featured-chefs-section">
+        <div class="container">
+            <!-- Headline -->
+            <h2 class="section-title">All Available Chefs</h2>
+            <h3 class="section-subtitle">Top-rated professionals for your premium events</h3>
+
+            <!-- Carousel Wrapper -->
+            <div class="chefs-carousel">
+                {% for chef in all_other_chefs %}
+                <div class="chef-card">
+                    <img src="{{ chef.profile_image.url }}" alt="Chef Photo" class="chef-photo">
+                    <div class="chef-info">
+                        <h4 class="chef-name">{{ chef.name }}</h4>
+                        <p class="chef-specialty">{{ chef.specialty }}</p>
+                        <div class="chef-rating">
+                            {{ chef.star_rating }} <span>({{ chef.reviews_count }} reviews)</span>
+                        </div>
+                        <div class="chef-price">{{ chef.price }}</div>
+                        {% if chef.verified %}
+                            <div class="chef-verified">Verified</div>
+                        {% endif %}
+                        <button class="btn-primary">View Profile</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CHEF CATEGORIES / EVENT EXPERTISE SECTION -->
+    <section class="chef-categories-section">
+        <div class="container">
+            <h2 class="section-title">Chefs for Every Occasion</h2>
+            <h3 class="section-subtitle">Premium professionals for every event type</h3>
+
+            <div class="categories-grid">
+                {% for category in categories %}
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="{{ category.icon.url }}" alt="{{ category.title }}">
+                    </div>
+                    <h4 class="category-title">{{ category.title }}</h4>
+                    <p class="category-description">{{ category.description }}</p>
+                    <button class="btn-secondary">View Chefs</button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TESTIMONIALS / SOCIAL PROOF SECTION -->
+    <section class="testimonials-section">
+        <div class="container">
+            <!-- Headline -->
+            <h2 class="section-title">Trusted by Clients & Professionals Across Kenya</h2>
+            <h3 class="section-subtitle">Hear what our community says about working with ChefKe.</h3>
+
+            <!-- Testimonials Slider -->
+            <div class="testimonial-slider-wrapper">
+                <div class="testimonial-slider">
+                    <!-- Testimonial Card 1 -->
+                    <div class="testimonial-card">
+                        <img src="{% static 'img/testimonials/client1.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                        <p class="testimonial-text">"ChefKe made our corporate dinner unforgettable. Professional chefs and seamless service!"</p>
+                        <h4 class="testimonial-name">Jane W.</h4>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+
+                    <!-- Testimonial Card 2 -->
+                    <div class="testimonial-card">
+                        <img src="{% static 'img/testimonials/client2.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                        <p class="testimonial-text">"Our wedding catering was flawless, every guest loved it!"</p>
+                        <h4 class="testimonial-name">Mark K.</h4>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+
+                    <!-- Testimonial Card 3 -->
+                    <div class="testimonial-card">
+                        <img src="{% static 'img/testimonials/client3.jpg' %}" alt="Client Photo" class="testimonial-photo">
+                        <p class="testimonial-text">"Premium chefs, responsive team, and smooth booking experience. Highly recommend!"</p>
+                        <h4 class="testimonial-name">Sophia N.</h4>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+
+                    <!-- Testimonial Card 4 -->
+                    <div class="testimonial-card">
+                        <img src="{% static 'img/testimonials/chef1.jpg' %}" alt="Chef Photo" class="testimonial-photo">
+                        <p class="testimonial-text">"Working with ChefKe has been seamless. The platform makes booking clients easy and efficient!"</p>
+                        <h4 class="testimonial-name">Chef James M.</h4>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+
+                    <!-- Testimonial Card 5 -->
+                    <div class="testimonial-card">
+                        <img src="{% static 'img/testimonials/chef2.jpg' %}" alt="Chef Photo" class="testimonial-photo">
+                        <p class="testimonial-text">"The process is simple and professional. I can focus on cooking while ChefKe handles bookings."</p>
+                        <h4 class="testimonial-name">Chef Sophia K.</h4>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- CALL-TO-ACTION / PREMIUM SIGNUP SECTION -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <!-- Headline -->
+            <h2 class="section-title">Book Your Chef or Join ChefKe Today</h2>
+            <p class="section-subtitle">Verified, professional, and ready for your event.</p>
+
+            <!-- Dual CTA Buttons -->
+            <div class="cta-buttons">
+                <a href="{% url 'booking' %}" class="btn-primary">Book a Chef</a>
+                <a href="{% url 'chef_registration' %}" class="btn-secondary">Join as a Chef</a>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

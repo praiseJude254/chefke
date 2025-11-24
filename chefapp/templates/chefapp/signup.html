@@ -2,46 +2,73 @@
 {% load static %}
 
 {% block content %}
-<section class="signup-section">
-    <div class="signup-container">
-        <!-- Logo -->
-        <img src="images/logo.png" alt="Premium Chefs Logo" class="signup-logo">
+<!-- 2️⃣ Sign Up Form Section (Premium Style) -->
+<section class="booking-section signup-section">
+  <div class="booking-container">
+    <!-- Logo -->
+    <img src="{% static 'img/logo/logo.png' %}" alt="ChefKe Logo" class="booking-logo">
 
-        <!-- Title & Subtitle -->
-        <h1 class="signup-title">Create Your Account</h1>
-        <p class="signup-subtitle">
-            Join our premium platform and book the best chefs and catering services across Kenya.
+    <!-- Title & Subtitle -->
+    <h1 class="booking-title">Create Your ChefKe Account</h1>
+    <p class="booking-subtitle">
+      It only takes a few moments to start booking Kenya’s finest chefs and catering professionals.
+    </p>
+
+    <section class="booking-section signup-section">
+    <div class="booking-container">
+        <img src="{% static 'img/logo/logo.png' %}" alt="ChefKe Logo" class="booking-logo">
+        <h1 class="booking-title">Join ChefKe</h1>
+        <p class="booking-subtitle">
+        Create your account to book premium chefs and catering services.
         </p>
 
-        <!-- Form -->
-        <form action="#" method="post" class="signup-form">
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
+        <form class="booking-form" action="/signup/" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="first-name">First Name *</label>
+            <input type="text" id="first-name" name="first_name" placeholder="Enter your first name" required>
+        </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </div>
+        <div class="form-group">
+            <label for="last-name">Last Name *</label>
+            <input type="text" id="last-name" name="last_name" placeholder="Enter your last name" required>
+        </div>
 
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
-            </div>
+        <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
 
-            <!-- Buttons -->
-            <div class="form-actions">
-                <button type="submit" class="btn-primary">Sign Up</button>
-                <button type="reset" class="btn-secondary">Clear</button>
-            </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+254..." >
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm-password">Confirm Password *</label>
+            <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to ChefKe’s <a href="#">Terms & Privacy Policy</a></label>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">Sign Up</button>
+            <button type="reset" class="btn-secondary">Clear</button>
+        </div>
         </form>
-
-        <!-- Extra Link -->
-        <p class="login-link">
-            Already have an account? <a href="#">Login</a>
-        </p>
     </div>
+    </section>
+
+  </div>
 </section>
+
 
 {% endblock %}

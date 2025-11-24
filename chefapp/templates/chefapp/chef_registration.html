@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}ChefKe | Booking{% endblock %}
+{% block content %}
+
+<section class="registration-section">
+  <div class="registration-container">
+
+    <!-- Logo -->
+    <img src="img/logo/logo.png" alt="ChefKe Logo" class="registration-logo">
+
+    <!-- Title & Subtitle -->
+    <h1 class="registration-title">Join ChefKe as a Chef</h1>
+    <p class="registration-subtitle">
+      Become part of Kenya’s premium network of chefs. Provide your details to showcase your culinary expertise 
+      and access exclusive high-end event bookings.
+    </p>
+
+    <!-- Registration Form -->
+    <form class="registration-form" enctype="multipart/form-data">
+
+      <div class="form-group">
+        <label for="first-name">First Name *</label>
+        <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="last-name">Last Name *</label>
+        <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+254 ..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="specialty">Culinary Specialty *</label>
+        <select id="specialty" name="specialty" required>
+          <option value="" disabled selected>Select your specialty</option>
+          <option value="pastry">Pastry & Baking</option>
+          <option value="continental">Continental Cuisine</option>
+          <option value="african">African Cuisine</option>
+          <option value="fusion">Fusion & Modern</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Years of Experience *</label>
+        <input type="number" id="experience" name="experience" placeholder="e.g. 5" min="0" required>
+      </div>
+
+      <!-- NEW: Professional Image Upload -->
+      <div class="form-group">
+        <label for="profile-img">Professional Photo *</label>
+        <input type="file" id="profile-img" name="profile-img" accept="image/*" required>
+        <small class="small-note">High-quality headshot (JPEG/PNG recommended).</small>
+      </div>
+
+      <!-- NEW: Culinary Qualifications -->
+      <div class="form-group">
+        <label for="qualifications">Academic & Culinary Qualifications *</label>
+        <input type="file" id="qualifications" name="qualifications" accept=".pdf,image/*" required>
+        <small class="small-note">Upload PDF certificates or high-quality scans.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="portfolio">Portfolio / Sample Work (Optional)</label>
+        <input type="file" id="portfolio" name="portfolio" accept="image/*,video/*">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password *</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password *</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+      </div>
+
+      <div class="form-group checkbox-inline">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to ChefKe’s Terms & Privacy Policy</label>
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Register as Chef</button>
+        <button type="reset" class="btn-secondary">Clear</button>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+
+{% endblock %}
