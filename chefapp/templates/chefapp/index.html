@@ -10,7 +10,7 @@
         <h2>Hire Professional Chefs in Kenya</h2>
         <p>From private cookouts to large events, ChefKe connects you with the best chefs across the country.</p>
         <div class="hero-buttons">
-          <a href="{% url 'aboutus' %}" class="btn primary-btn">Get Started</a>
+          <a href="{% url 'chefs' %}" class="btn primary-btn">Get Started</a>
           <a href="{% url 'aboutus' %}" class="btn secondary-btn">Learn More</a>
         </div>
         <div class="scroll-down">
@@ -29,7 +29,9 @@
         <p>
           At <strong>ChefKe</strong>, we connect you with the finest chefs in Kenya for private
           cookouts, events, and unforgettable dining experiences. Our mission is to bring luxury,
-          taste, and professionalism to your table.
+          taste, and professionalism to your table. Ensuring every meal is more than just food <strong> it’s an experience.</strong>
+          <br><br>
+          Whether you’re hosting an intimate dinner, planning a grand celebration, or curating a bespoke culinary moment, ChefKe simplifies the entire process by providing a trusted digital platform where clients can seamlessly discover, book, and collaborate with verified chefs and catering experts. We handpick only the most skilled professionals, ensuring world-class service, safety, and convenience. With ChefKe, excellence meets accessibility crafted to elevate hospitality standards across Kenya’s most vibrant cities and beyond.
         </p>
         <a href="{% url 'aboutus' %}" class="about-cta">Learn More</a>
       </div>
@@ -81,17 +83,23 @@
   </div>
   </section>
 
-  <!-- HOW IT WORKS SECTION -->
+  <!-- HOW IT WORKS SECTION  -->
   <section class="how-it-works">
     <div class="container">
       <h2 class="section-title">A Premium Experience in 3 Steps</h2>
       <p class="section-intro">Quickly understand how ChefKe makes your event exceptional and seamless.</p>
-      
+
       <div class="steps-cards">
         <!-- Step 1 -->
         <div class="step-card">
-          <div class="icon-wrapper">
-            <img src="img/icons/magnifying-glass.png" alt="Browse & Select Icon">
+          <div class="icon-wrapper" aria-hidden="true">
+            <!-- Search / Browse SVG -->
+            <svg viewBox="0 0 24 24" width="40" height="40" role="img" xmlns="http://www.w3.org/2000/svg" focusable="false">
+              <g fill="none" fill-rule="evenodd">
+                <circle cx="10.5" cy="10.5" r="6" stroke="#b68c4a" stroke-width="1.8" fill="none"/>
+                <path d="M21 21l-4.8-4.8" stroke="#b68c4a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
           </div>
           <h4>Browse & Select</h4>
           <p>Choose from verified chefs or let ChefKe recommend the perfect match for your event.</p>
@@ -99,8 +107,15 @@
 
         <!-- Step 2 -->
         <div class="step-card">
-          <div class="icon-wrapper">
-            <img src="img/icons/calendar-check.png" alt="Book & Secure Icon">
+          <div class="icon-wrapper" aria-hidden="true">
+            <!-- Calendar-check SVG -->
+            <svg viewBox="0 0 24 24" width="40" height="40" role="img" xmlns="http://www.w3.org/2000/svg" focusable="false">
+              <g fill="none" fill-rule="evenodd">
+                <rect x="3" y="5" width="18" height="16" rx="2" stroke="#b68c4a" stroke-width="1.8"/>
+                <path d="M8 2v4M16 2v4" stroke="#b68c4a" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M9.5 12.5l2 2 4-4" stroke="#b68c4a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
           </div>
           <h4>Book & Secure</h4>
           <p>Check availability, book instantly, and pay securely.</p>
@@ -108,8 +123,13 @@
 
         <!-- Step 3 -->
         <div class="step-card">
-          <div class="icon-wrapper">
-            <img src="img/icons/star-rating.png" alt="Enjoy & Review Icon">
+          <div class="icon-wrapper" aria-hidden="true">
+            <!-- Star SVG -->
+            <svg viewBox="0 0 24 24" width="40" height="40" role="img" xmlns="http://www.w3.org/2000/svg" focusable="false">
+              <g fill="none" fill-rule="evenodd">
+                <path d="M12 17.3l-6.162 3.637 1.643-6.897L2 9.863l6.969-.586L12 3.5l3.031 5.777L22 9.863l-5.481 3.177 1.643 6.897z" fill="#b68c4a"/>
+              </g>
+            </svg>
           </div>
           <h4>Enjoy & Review</h4>
           <p>Experience gourmet service and leave ratings to ensure quality.</p>
@@ -120,130 +140,42 @@
 
   <!-- FEATURED CHEFS SECTION -->
   <section class="featured-chefs">
-    <div class="container">
-      <h2 class="section-title">Meet Our Elite Chefs</h2>
-      <p class="section-intro">Curated profiles of verified chefs and catering companies ready to elevate your events.</p>
+      <div class="container">
+          <h2 class="section-title">Meet Our Elite Chefs</h2>
+          <p class="section-intro">Curated profiles of verified chefs and catering companies ready to elevate your events.</p>
 
-      <div class="chef-cards">
-        <!-- Chef Card 1 -->
-        <div class="chef-card">
-          <div class="chef-img">
-            <img src="{% static 'img/abt1.png' %}" alt="Chef Peter Mwangi">
-            <div class="verified-badge">✔ Verified</div>
+          <div class="chef-cards">
+              {% for chef in elite_chefs %}
+              <div class="chef-card">
+                  <div class="chef-img">
+                      <img src="{{ chef.profile_image.url }}" alt="{{ chef.name }}">
+                      {% if chef.verified %}
+                      <div class="verified-badge">✔ Verified</div>
+                      {% endif %}
+                  </div>
+                  <h3>{{ chef.name }}</h3>
+                  <p class="specialty">{{ chef.specialty }}</p>
+                  <div class="rating">
+                      <span>{{ chef.star_rating }}</span>
+                      <span class="reviews">({{ chef.reviews_count }} reviews)</span>
+                  </div>
+                  <p class="price">{{ chef.price }} per Hour</p>
+                  <div class="btn-group">
+                      <a href="#" class="luxury-btn">View Profile</a>
+                      <a href="#" class="book-btn">Book Chef</a>
+                  </div>
+              </div>
+              {% empty %}
+              <p>No elite chefs available at the moment.</p>
+              {% endfor %}
           </div>
-          <h3>Chef Peter Mwangi</h3>
-          <p class="specialty">Kenyan Traditional</p>
-          <div class="rating">
-            <span>★★★★☆</span>
-            <span class="reviews">(105 reviews)</span>
-          </div>
-          <p class="price">KES 5,500/hr</p>
-          <div class="btn-group">
-            <a href="#" class="luxury-btn">View Profile</a>
-            <a href="#" class="book-btn">Book Chef</a>
-          </div>
-        </div>
 
-        <!-- Chef Card 2 -->
-        <div class="chef-card">
-          <div class="chef-img">
-            <img src="img/chefs/chef2.jpg" alt="Chef Jane Wambui">
-            <div class="verified-badge">✔ Verified</div>
+          <div class="cta-container">
+              <a href="{% url 'chefs' %}" class="luxury-btn">Meet All Chefs</a>
           </div>
-          <h3>Chef Jane Wambui</h3>
-          <p class="specialty">French Cuisine</p>
-          <div class="rating">
-            <span>★★★★★</span>
-            <span class="reviews">(98 reviews)</span>
-          </div>
-          <p class="price">KES 7,500/hr</p>
-          <div class="btn-group">
-            <a href="#" class="luxury-btn">View Profile</a>
-            <a href="#" class="book-btn">Book Chef</a>
-          </div>
-        </div>
-
-        <!-- Chef Card 3 -->
-        <div class="chef-card">
-          <div class="chef-img">
-            <img src="img/chefs/chef3.jpg" alt="Chef Michael Otieno">
-            <div class="verified-badge">✔ Verified</div>
-          </div>
-          <h3>Chef Michael Otieno</h3>
-          <p class="specialty">Asian Fusion</p>
-          <div class="rating">
-            <span>★★★★☆</span>
-            <span class="reviews">(75 reviews)</span>
-          </div>
-          <p class="price">KES 6,000/hr</p>
-          <div class="btn-group">
-            <a href="#" class="luxury-btn">View Profile</a>
-            <a href="#" class="book-btn">Book Chef</a>
-          </div>
-        </div>
-
-        <!-- International Chef -->
-        <div class="chef-card">
-          <div class="chef-img">
-            <img src="img/chefs/chef4.jpg" alt="Chef Marco Rossi">
-            <div class="verified-badge">✔ Verified</div>
-          </div>
-          <h3>Chef Marco Rossi</h3>
-          <p class="specialty">Italian Cuisine</p>
-          <div class="rating">
-            <span>★★★★★</span>
-            <span class="reviews">(200 reviews)</span>
-          </div>
-          <p class="price">USD 90/hr</p>
-          <div class="btn-group">
-            <a href="#" class="luxury-btn">View Profile</a>
-            <a href="#" class="book-btn">Book Chef</a>
-          </div>
-        </div>
-
-        <!-- International Chef -->
-        <div class="chef-card">
-          <div class="chef-img">
-            <img src="img/chefs/chef4.jpg" alt="Chef Marco Rossi">
-            <div class="verified-badge">✔ Verified</div>
-          </div>
-          <h3>Chef Marco Rossi</h3>
-          <p class="specialty">Italian Cuisine</p>
-          <div class="rating">
-            <span>★★★★★</span>
-            <span class="reviews">(200 reviews)</span>
-          </div>
-          <p class="price">USD 90/hr</p>
-          <div class="btn-group">
-            <a href="#" class="luxury-btn">View Profile</a>
-            <a href="#" class="book-btn">Book Chef</a>
-          </div>
-        </div>
-        
-        <!-- International Chef -->
-        <div class="chef-card">
-          <div class="chef-img">
-            <img src="img/chefs/chef4.jpg" alt="Chef Marco Rossi">
-            <div class="verified-badge">✔ Verified</div>
-          </div>
-          <h3>Chef Marco Rossi</h3>
-          <p class="specialty">Italian Cuisine</p>
-          <div class="rating">
-            <span>★★★★★</span>
-            <span class="reviews">(200 reviews)</span>
-          </div>
-          <p class="price">USD 90/hr</p>
-          <div class="btn-group">
-            <a href="#" class="luxury-btn">View Profile</a>
-            <a href="#" class="book-btn">Book Chef</a>
-          </div>
-        </div>
       </div>
-      <div class="cta-container">
-        <a href="#" class="luxury-btn">Meet All Chefs</a>
-      </div>
-    </div>
   </section>
+
 
   <!-- SERVICES & EVENTS SECTION -->
   <section class="services-section">
@@ -301,7 +233,7 @@
       </div>
   </section>
 
-  <!-- WHY CHOOSE US SECTION-->
+  <!-- WHY CHOOSE US SECTION -->
   <section class="why-chefke-section">
     <div class="container">
 
@@ -310,37 +242,70 @@
         <h3 class="section-subtitle">Verified Professionals, Premium Service, Peace of Mind.</h3>
 
         <div class="feature-cards">
-            <!-- Feature Card 1 -->
+            <!-- Feature Card 1: Verified Chefs -->
             <div class="feature-card">
-                <img src="{% static 'icons/verified.png' %}" alt="Verified Chefs">
+                <div class="icon-wrapper" aria-hidden="true">
+                    <!-- Verified Badge SVG -->
+                    <svg viewBox="0 0 24 24" width="40" height="40" role="img" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                      <g fill="none" fill-rule="evenodd">
+                        <circle cx="12" cy="12" r="10" stroke="#b68c4a" stroke-width="1.8"/>
+                        <path d="M9 12l2 2 4-4" stroke="#b68c4a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                      </g>
+                    </svg>
+                </div>
                 <h4>Verified Chefs & Caterers</h4>
                 <p>ID & certification verification for complete trust.</p>
             </div>
 
-            <!-- Feature Card 2 -->
+            <!-- Feature Card 2: Real-Time Availability -->
             <div class="feature-card">
-                <img src="{% static 'icons/calendar.png' %}" alt="Real-Time Availability">
+                <div class="icon-wrapper" aria-hidden="true">
+                    <!-- Calendar SVG -->
+                    <svg viewBox="0 0 24 24" width="40" height="40" role="img" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                      <g fill="none" fill-rule="evenodd">
+                        <rect x="3" y="5" width="18" height="16" rx="2" stroke="#b68c4a" stroke-width="1.8"/>
+                        <path d="M8 2v4M16 2v4" stroke="#b68c4a" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M3 10h18" stroke="#b68c4a" stroke-width="1.8" stroke-linecap="round"/>
+                      </g>
+                    </svg>
+                </div>
                 <h4>Real-Time Availability</h4>
                 <p>Never double-booked – always up-to-date schedules.</p>
             </div>
 
-            <!-- Feature Card 3 -->
+            <!-- Feature Card 3: Secure Payments -->
             <div class="feature-card">
-                <img src="{% static 'icons/payment.png' %}" alt="Secure Payments">
+                <div class="icon-wrapper" aria-hidden="true">
+                    <!-- Payment / Wallet SVG -->
+                    <svg viewBox="0 0 24 24" width="40" height="40" role="img" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                      <g fill="none" fill-rule="evenodd">
+                        <rect x="2" y="6" width="20" height="12" rx="2" stroke="#b68c4a" stroke-width="1.8"/>
+                        <circle cx="18" cy="12" r="1.5" fill="#b68c4a"/>
+                        <path d="M6 12h6" stroke="#b68c4a" stroke-width="1.8" stroke-linecap="round"/>
+                      </g>
+                    </svg>
+                </div>
                 <h4>Secure & Convenient Payments</h4>
                 <p>Deposit & payout system for safe transactions.</p>
             </div>
 
-            <!-- Feature Card 4 -->
+            <!-- Feature Card 4: Ratings & Accountability -->
             <div class="feature-card">
-                <img src="{% static 'icons/rating.png' %}" alt="Ratings & Accountability">
+                <div class="icon-wrapper" aria-hidden="true">
+                    <!-- Star / Rating SVG -->
+                    <svg viewBox="0 0 24 24" width="40" height="40" role="img" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                      <g fill="none" fill-rule="evenodd">
+                        <path d="M12 17.3l-6.162 3.637 1.643-6.897L2 9.863l6.969-.586L12 3.5l3.031 5.777L22 9.863l-5.481 3.177 1.643 6.897z" fill="#b68c4a"/>
+                      </g>
+                    </svg>
+                </div>
                 <h4>Ratings & Accountability</h4>
                 <p>Trustworthy client & chef feedback for peace of mind.</p>
             </div>
         </div>
     </div>
   </section>
-  
+
   <!-- TESTIMONIALS SECTION-->
   <section class="testimonials-section">
       <div class="container">
@@ -351,55 +316,14 @@
 
           <!-- Testimonial Slider -->
           <div class="testimonial-slider">
-              <!-- Testimonial Card 1 -->
+              {% for testimonial in testimonials %}
               <div class="testimonial-card">
-                  <img src="{% static 'img/testimonials/client1.jpg' %}" alt="Client Photo" class="testimonial-photo">
-                  <p class="testimonial-text">"ChefKe made our corporate dinner unforgettable. Professional chefs and seamless service!"</p>
-                  <h4 class="testimonial-name">Jane W.</h4>
-                  <div class="testimonial-rating">★★★★★</div>
+                  <img src="{{ testimonial.client_photo.url }}" alt="Client Photo" class="testimonial-photo">
+                  <p class="testimonial-text">"{{ testimonial.testimonial_text }}"</p>
+                  <h4 class="testimonial-name">{{ testimonial.client_name }}</h4>
+                  <div class="testimonial-rating">{{ testimonial.stars }}</div>
               </div>
-
-              <!-- Testimonial Card 2 -->
-              <div class="testimonial-card">
-                  <img src="{% static 'img/testimonials/client2.jpg' %}" alt="Client Photo" class="testimonial-photo">
-                  <p class="testimonial-text">"Our wedding catering was flawless, every guest loved it!"</p>
-                  <h4 class="testimonial-name">Mark K.</h4>
-                  <div class="testimonial-rating">★★★★★</div>
-              </div>
-
-              <!-- Testimonial Card 3 -->
-              <div class="testimonial-card">
-                  <img src="{% static 'img/testimonials/client3.jpg' %}" alt="Client Photo" class="testimonial-photo">
-                  <p class="testimonial-text">"Premium chefs, responsive team, and smooth booking experience. Highly recommend!"</p>
-                  <h4 class="testimonial-name">Sophia N.</h4>
-                  <div class="testimonial-rating">★★★★★</div>
-              </div>
-
-              <!-- Testimonial Card 1 -->
-              <div class="testimonial-card">
-                  <img src="{% static 'img/testimonials/client1.jpg' %}" alt="Client Photo" class="testimonial-photo">
-                  <p class="testimonial-text">"ChefKe made our corporate dinner unforgettable. Professional chefs and seamless service!"</p>
-                  <h4 class="testimonial-name">Jane W.</h4>
-                  <div class="testimonial-rating">★★★★★</div>
-              </div>
-
-              <!-- Testimonial Card 2 -->
-              <div class="testimonial-card">
-                  <img src="{% static 'img/testimonials/client2.jpg' %}" alt="Client Photo" class="testimonial-photo">
-                  <p class="testimonial-text">"Our wedding catering was flawless, every guest loved it!"</p>
-                  <h4 class="testimonial-name">Mark K.</h4>
-                  <div class="testimonial-rating">★★★★★</div>
-              </div>
-
-              <!-- Testimonial Card 3 -->
-              <div class="testimonial-card">
-                  <img src="{% static 'img/testimonials/client3.jpg' %}" alt="Client Photo" class="testimonial-photo">
-                  <p class="testimonial-text">"Premium chefs, responsive team, and smooth booking experience. Highly recommend!"</p>
-                  <h4 class="testimonial-name">Sophia N.</h4>
-                  <div class="testimonial-rating">★★★★★</div>
-              </div>              
-
-
+              {% endfor %}
           </div>
       </div>
   </section>
@@ -453,7 +377,7 @@
               <!-- CTA Buttons -->
               <div class="form-actions">
                   <button type="submit" class="luxury-btn">Check Availability & Book Now</button>
-                  <a href="#" class="book-btn">Join as a Chef</a>
+                  <a href="{% url 'chef_registration' %}" class="book-btn">Join as a Chef</a>
               </div>
           </form>
       </div>

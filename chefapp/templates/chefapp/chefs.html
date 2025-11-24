@@ -64,73 +64,39 @@
     </section>
 
     <!-- FEATURED CHEFS SECTION -->
-    <section class="featured-chefs-section">
+    <section class="featured-chefs">
         <div class="container">
-            <!-- Headline -->
-            <h2 class="section-title">Elite Chefs Recommended for You</h2>
-            <h3 class="section-subtitle">Top-rated professionals for your premium events</h3>
+            <h2 class="section-title">Meet Our Elite Chefs</h2>
+            <p class="section-intro">Curated profiles of verified chefs and catering companies ready to elevate your events.</p>
 
-            <!-- Carousel Wrapper -->
-            <div class="chefs-carousel">
-                <!-- Chef Card 1 -->
+            <div class="chef-cards">
+                {% for chef in elite_chefs %}
                 <div class="chef-card">
-                    <img src="{% static 'img/abt.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef James M.</h4>
-                        <p class="chef-specialty">Italian & Continental</p>
-                        <div class="chef-rating">
-                            ★★★★★ <span>(25 reviews)</span>
-                        </div>
-                        <div class="chef-price">KSh 8,000/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
+                    <div class="chef-img">
+                        <img src="{{ chef.profile_image.url }}" alt="{{ chef.name }}">
+                        {% if chef.verified %}
+                        <div class="verified-badge">✔ Verified</div>
+                        {% endif %}
+                    </div>
+                    <h3>{{ chef.name }}</h3>
+                    <p class="specialty">{{ chef.specialty }}</p>
+                    <div class="rating">
+                        <span>{{ chef.star_rating }}</span>
+                        <span class="reviews">({{ chef.reviews_count }} reviews)</span>
+                    </div>
+                    <p class="price">{{ chef.price }} per Hour</p>
+                    <div class="btn-group">
+                        <a href="#" class="luxury-btn">View Profile</a>
+                        <a href="#" class="book-btn">Book Chef</a>
                     </div>
                 </div>
+                {% empty %}
+                <p>No elite chefs available at the moment.</p>
+                {% endfor %}
+            </div>
 
-                <!-- Chef Card 2 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef2.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Sophia K.</h4>
-                        <p class="chef-specialty">French & Pastry</p>
-                        <div class="chef-rating">
-                            ★★★★★ <span>(30 reviews)</span>
-                        </div>
-                        <div class="chef-price">KSh 9,500/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 3 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef3.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Mark T.</h4>
-                        <p class="chef-specialty">Asian Fusion</p>
-                        <div class="chef-rating">
-                            ★★★★☆ <span>(18 reviews)</span>
-                        </div>
-                        <div class="chef-price">KSh 7,500/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 4 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef4.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Linda A.</h4>
-                        <p class="chef-specialty">Gourmet & Desserts</p>
-                        <div class="chef-rating">
-                            ★★★★★ <span>(40 reviews)</span>
-                        </div>
-                        <div class="chef-price">KSh 10,000/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
+            <div class="cta-container">
+                <a href="{% url 'chefs' %}" class="luxury-btn">Meet All Chefs</a>
             </div>
         </div>
     </section>
@@ -227,216 +193,49 @@
 
             <!-- Carousel Wrapper -->
             <div class="chefs-carousel">
-                <!-- Chef Card 1 -->
+                {% for chef in all_other_chefs %}
                 <div class="chef-card">
-                    <img src="{% static 'img/abt.jpg' %}" alt="Chef Photo" class="chef-photo">
+                    <img src="{{ chef.profile_image.url }}" alt="Chef Photo" class="chef-photo">
                     <div class="chef-info">
-                        <h4 class="chef-name">Chef James M.</h4>
-                        <p class="chef-specialty">Italian & Continental</p>
-                        <div class="chef-rating">★★★★★ <span>(25 reviews)</span></div>
-                        <div class="chef-price">KSh 8,000/hr</div>
-                        <div class="chef-verified">Verified</div>
+                        <h4 class="chef-name">{{ chef.name }}</h4>
+                        <p class="chef-specialty">{{ chef.specialty }}</p>
+                        <div class="chef-rating">
+                            {{ chef.star_rating }} <span>({{ chef.reviews_count }} reviews)</span>
+                        </div>
+                        <div class="chef-price">{{ chef.price }}</div>
+                        {% if chef.verified %}
+                            <div class="chef-verified">Verified</div>
+                        {% endif %}
                         <button class="btn-primary">View Profile</button>
                     </div>
                 </div>
-
-                <!-- Chef Card 2 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef2.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Sophia K.</h4>
-                        <p class="chef-specialty">French & Pastry</p>
-                        <div class="chef-rating">★★★★★ <span>(30 reviews)</span></div>
-                        <div class="chef-price">KSh 9,500/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 3 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef3.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Mark T.</h4>
-                        <p class="chef-specialty">Asian Fusion</p>
-                        <div class="chef-rating">★★★★☆ <span>(18 reviews)</span></div>
-                        <div class="chef-price">KSh 7,500/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 4 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef4.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Linda A.</h4>
-                        <p class="chef-specialty">Gourmet & Desserts</p>
-                        <div class="chef-rating">★★★★★ <span>(40 reviews)</span></div>
-                        <div class="chef-price">KSh 10,000/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 5 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef5.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Paul N.</h4>
-                        <p class="chef-specialty">African & Continental</p>
-                        <div class="chef-rating">★★★★★ <span>(22 reviews)</span></div>
-                        <div class="chef-price">KSh 8,500/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 6 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef6.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Naomi L.</h4>
-                        <p class="chef-specialty">Pastry & Desserts</p>
-                        <div class="chef-rating">★★★★☆ <span>(15 reviews)</span></div>
-                        <div class="chef-price">KSh 7,800/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 1 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/abt.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef James M.</h4>
-                        <p class="chef-specialty">Italian & Continental</p>
-                        <div class="chef-rating">★★★★★ <span>(25 reviews)</span></div>
-                        <div class="chef-price">KSh 8,000/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 2 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef2.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Sophia K.</h4>
-                        <p class="chef-specialty">French & Pastry</p>
-                        <div class="chef-rating">★★★★★ <span>(30 reviews)</span></div>
-                        <div class="chef-price">KSh 9,500/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 3 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef3.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Mark T.</h4>
-                        <p class="chef-specialty">Asian Fusion</p>
-                        <div class="chef-rating">★★★★☆ <span>(18 reviews)</span></div>
-                        <div class="chef-price">KSh 7,500/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 4 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef4.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Linda A.</h4>
-                        <p class="chef-specialty">Gourmet & Desserts</p>
-                        <div class="chef-rating">★★★★★ <span>(40 reviews)</span></div>
-                        <div class="chef-price">KSh 10,000/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 5 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef5.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Paul N.</h4>
-                        <p class="chef-specialty">African & Continental</p>
-                        <div class="chef-rating">★★★★★ <span>(22 reviews)</span></div>
-                        <div class="chef-price">KSh 8,500/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>
-
-                <!-- Chef Card 6 -->
-                <div class="chef-card">
-                    <img src="{% static 'img/chefs/chef6.jpg' %}" alt="Chef Photo" class="chef-photo">
-                    <div class="chef-info">
-                        <h4 class="chef-name">Chef Naomi L.</h4>
-                        <p class="chef-specialty">Pastry & Desserts</p>
-                        <div class="chef-rating">★★★★☆ <span>(15 reviews)</span></div>
-                        <div class="chef-price">KSh 7,800/hr</div>
-                        <div class="chef-verified">Verified</div>
-                        <button class="btn-primary">View Profile</button>
-                    </div>
-                </div>                
+                {% endfor %}
             </div>
         </div>
     </section>
+
 
     <!-- CHEF CATEGORIES / EVENT EXPERTISE SECTION -->
     <section class="chef-categories-section">
         <div class="container">
-            <!-- Headline -->
             <h2 class="section-title">Chefs for Every Occasion</h2>
             <h3 class="section-subtitle">Premium professionals for every event type</h3>
 
-            <!-- Categories Grid -->
             <div class="categories-grid">
-                <!-- Corporate Events -->
+                {% for category in categories %}
                 <div class="category-card">
                     <div class="category-icon">
-                        <img src="{% static 'img/icons/corporate.svg' %}" alt="Corporate Events">
+                        <img src="{{ category.icon.url }}" alt="{{ category.title }}">
                     </div>
-                    <h4 class="category-title">Corporate Events</h4>
-                    <p class="category-description">Seamless catering for conferences, product launches, and corporate dinners.</p>
+                    <h4 class="category-title">{{ category.title }}</h4>
+                    <p class="category-description">{{ category.description }}</p>
                     <button class="btn-secondary">View Chefs</button>
                 </div>
-
-                <!-- Weddings & Celebrations -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <img src="{% static 'img/icons/wedding.svg' %}" alt="Weddings & Celebrations">
-                    </div>
-                    <h4 class="category-title">Weddings & Celebrations</h4>
-                    <p class="category-description">Make your special day unforgettable with curated wedding chefs.</p>
-                    <button class="btn-secondary">View Chefs</button>
-                </div>
-
-                <!-- Private Dining / Home Service -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <img src="{% static 'img/icons/private-dining.svg' %}" alt="Private Dining">
-                    </div>
-                    <h4 class="category-title">Private Dining</h4>
-                    <p class="category-description">Intimate home dining experiences crafted by top professionals.</p>
-                    <button class="btn-secondary">View Chefs</button>
-                </div>
-
-                <!-- Tourism & Luxury Experiences -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <img src="{% static 'img/icons/tourism.svg' %}" alt="Tourism & Luxury">
-                    </div>
-                    <h4 class="category-title">Tourism & Luxury</h4>
-                    <p class="category-description">Exclusive culinary experiences for travelers and luxury events.</p>
-                    <button class="btn-secondary">View Chefs</button>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
+
 
     <!-- TESTIMONIALS / SOCIAL PROOF SECTION -->
     <section class="testimonials-section">
@@ -502,8 +301,8 @@
 
             <!-- Dual CTA Buttons -->
             <div class="cta-buttons">
-                <a href="#booking-form" class="btn-primary">Book a Chef</a>
-                <a href="#chef-registration" class="btn-secondary">Join as a Chef</a>
+                <a href="{% url 'booking' %}" class="btn-primary">Book a Chef</a>
+                <a href="{% url 'chef_registration' %}" class="btn-secondary">Join as a Chef</a>
             </div>
         </div>
     </section>
